@@ -3,7 +3,7 @@ if [ $(id -u) -eq 0 ]
 then
 clear
 else
-echo -e "Execute o script como usuario \033[1;32mroot\033[0m"
+echo -e "Ejecute el script como usuario \033[1;32mroot\033[0m"
 exit
 fi
 if [ -d /etc/VpsPackdir ]
@@ -34,17 +34,17 @@ sistema=$(cat /etc/lsb-release |grep "DISTRIB_DESCRIPTION" | awk -F = '{print $2
 else
 sistema=Null
 fi
-echo -e "\033[1;31mPara a instalação ser correta é preciso o ip.
-Digite o ip !\033[0m"
+echo -e "\033[1;31mPara que la instalacion sea correcta se necesita una ip.
+Digite su ip !\033[0m"
 read -p ": " ip
 clear
-echo -e "\033[1;31m-----> \033[01;37mScript Feito por (Unix SSH)\033[0m"
-echo -e "\033[1;31m-----> \033[01;37mSeu sistema operacional:\033[1;31m $sistema"
-echo -e "\033[1;31m-----> \033[01;37mSeu ip:\033[1;31m $ip"
-echo -e "\033[1;31m-----> \033[1;37mSQUID NAS PORTAS:\033[1;31m 80, 8080, 8799, 3128\033[0m"
-echo -e "\033[1;31m-----> \033[1;37mSSH NAS PORTAS: \033[1;31m443, 22\033[0m"
-echo -e "\033[1;31m-----> \033[1;37mSSH NOS IPS: \033[1;31m$ip, localhost, 127.0.0.1\033[0m"
-echo -e "\033[1;31m-----> \033[1;37mFERRAMENTA ADICIONAR DOMINIOS:\033[1;31m addhost\033[0m"
+echo -e "\033[1;31m-----> \033[01;37mScript VPSPACK - V2.1 AngelBanderas\033[0m"
+echo -e "\033[1;31m-----> \033[01;37mSistema:\033[1;31m $sistema"
+echo -e "\033[1;31m-----> \033[01;37mSu ip agregada:\033[1;31m $ip"
+echo -e "\033[1;31m-----> \033[1;37mSQUID:\033[1;31m 80, 8080, 8799, 3128\033[0m"
+echo -e "\033[1;31m-----> \033[1;37mPuertos SSH: \033[1;31m443, 22\033[0m"
+echo -e "\033[1;31m-----> \033[1;37mIPS/Hosts SSH: \033[1;31m$ip, localhost, 127.0.0.1\033[0m"
+echo -e "\033[1;31m-----> \033[1;37mHerramienta para agregar Hosts:\033[1;31m addhost\033[0m"
 
 function sshd_config(){ 
 echo 'Port 443
@@ -56,23 +56,23 @@ PasswordAuthentication yes
 
 function addihost(){ echo '#!/bin/bash
 echo -e "\033[1;31mHosts atualmente permitidos\n\n\033[1;32m$(cat /etc/payloads)\n\033[0m"
-echo "Qual host deseja adicionar ?"
+echo "¿Que host desea agregar?"
 read -p ": " host
 echo "$host" >> /etc/payloads
 squid -k reconfigure > /dev/null 2> /dev/null
 squid3 -k reconfigure > /dev/null 2> /dev/null
-echo "$host Adicionado" ' > /bin/addhost
+echo "$host Agregado" ' > /bin/addhost
 chmod a+x /bin/addhost
 }
 function removerhostf(){ echo '#!/bin/bash
 echo -e "\033[1;31mHosts atualmente permitidos\n\n\033[1;32m$(cat /etc/payloads)\n\033[0m"
-echo -ne "\033[1;37mQual host deseja remover: \033[0m"
+echo -ne "\033[1;37m¿Cual host desea eliminar?: \033[0m"
 read host
 hosts = $(cat /etc/payloads |grep -v $host)
 echo "$hosts" > /etc/payloads
 squid -k reconfigure >/dev/null 2>/dev/null
 squid3 -k reconfigure >/dev/null 2>/dev/null
-echo -e "\n\033[1;32mHost Removido\033[0m"
+echo -e "\n\033[1;32mHost Eliminado\033[0m"
 ' > /bin/removerhost
 }
 function payloads(){ echo ".claro.com.br
@@ -82,7 +82,7 @@ function payloads(){ echo ".claro.com.br
 }
 
 if cat /etc/so |grep -i ubuntu |grep 16 1> /dev/null 2> /dev/null ; then
-echo -e "\033[1;37mConfigurando, Aguarde...\033[0m"
+echo -e "\033[1;37mConfigurando, Espere...\033[0m"
 apt-get update 1> /dev/null 2> /dev/null
 apt-get install -y squid3 1> /dev/null 2> /dev/null
 
@@ -118,7 +118,7 @@ exit 0
 fi
 
 if cat /etc/so |grep -i ubuntu 1> /dev/null 2> /dev/null ; then
-echo -e "\033[1;37mConfigurando, Aguarde...\033[0m"
+echo -e "\033[1;37mConfigurando, Espere...\033[0m"
 apt-get update 1> /dev/null 2> /dev/null
 apt-get install -y squid3 1> /dev/null 2> /dev/null
 
@@ -145,15 +145,15 @@ payloads
 service squid3 restart 1> /dev/null 2> /dev/null
 addihost
 removerhostf
-echo -e "\033[1;37mPara adicionar novos hosts ao squid execute o comando \033[1;32maddhost
-\033[1;37mPara remover execute o comando \033[1;32mremoverhost\033[1;37m
-Os hosts ficam no arquivo /etc/payloads\033[0m"
-echo -e "\033[01;31mTudo terminado crie um usuario e teste !! \033[0m"
+echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
+\033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
+Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
+echo -e "\033[01;31mFinalizado !! \033[0m"
 exit 0
 fi
 
 if cat /etc/so |grep -i centos 1> /dev/null 2> /dev/null ; then
-echo -e "\033[01;37mConfigurando, Aguarde...\033[0m"
+echo -e "\033[01;37mConfigurando, Espere...\033[0m"
 yum -y update 1> /dev/null 2> /dev/null
 yum install -y squid 1> /dev/null 2> /dev/null
 
@@ -180,15 +180,15 @@ payloads
 service squid restart 1> /dev/null 2> /dev/null
 addihost
 removerhostf
-echo -e "\033[1;37mPara adicionar novos hosts ao squid execute o comando \033[1;32maddhost
-\033[1;37mPara remover execute o comando \033[1;32mremoverhost\033[1;37m
-Os hosts ficam no arquivo /etc/payloads\033[0m"
-echo -e "\033[01;31mTudo terminado crie um usuario e teste !! \033[0m"
+echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
+\033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
+Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
+echo -e "\033[01;31mFinalizado !! \033[0m"
 exit
 fi
 
 if cat /etc/so |grep -i debian 1> /dev/null 2> /dev/null ; then
-echo -e "\033[01;37mConfigurando, Aguarde...\033[0m"
+echo -e "\033[01;37mConfigurando, Espere...\033[0m"
 apt-get update 1> /dev/null 2> /dev/null
 apt-get install -y squid3 1> /dev/null 2> /dev/null
 service apache2 stop 1> /dev/null 2> /dev/null
@@ -215,14 +215,14 @@ payloads
 service squid3 restart 1> /dev/null 2> /dev/null
 addihost
 removerhostf
-echo -e "\033[1;37mPara adicionar novos hosts ao squid execute o comando \033[1;32maddhost
-\033[1;37mPara remover execute o comando \033[1;32mremoverhost\033[1;37m
-Os hosts ficam no arquivo /etc/payloads\033[0m"
-echo -e "\033[01;31mTudo terminado crie um usuario e teste !! \033[0m"
+echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
+\033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
+Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
+echo -e "\033[01;31mFinalizado !! \033[0m"
 exit 0
 fi
 if cat /etc/issue |grep -i kernel 1> /dev/null 2> /dev/null ; then
-echo -e "\033[01;31mConfigurando, Aguarde...\033[0m"
+echo -e "\033[01;31mConfigurando, Espere...\033[0m"
 yum -y update 1> /dev/null 2> /dev/null
 yum install -y squid 1> /dev/null 2> /dev/null
 
@@ -249,13 +249,13 @@ payloads
 service squid restart 1> /dev/null 2> /dev/null
 addihost
 removerhostf
-echo -e "\033[1;37mPara adicionar novos hosts ao squid execute o comando \033[1;32maddhost
-\033[1;37mPara remover execute o comando \033[1;32mremoverhost\033[1;37m
-Os hosts ficam no arquivo /etc/payloads\033[0m"
-echo -e "\033[01;31mTudo terminado crie um usuario e teste !! \033[0m"
+echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
+\033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
+Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
+echo -e "\033[01;31mFinalizado !! \033[0m"
 exit
 fi
-echo -e "\033[01;31mConfigurando, Aguarde...\033[0m"
+echo -e "\033[01;31mConfigurando, Espere...\033[0m"
 yum -y update 1> /dev/null 2> /dev/null
 yum install -y squid 1> /dev/null 2> /dev/null
 apt-get update > /dev/null 2> /dev/null
@@ -285,10 +285,10 @@ service squid restart 1> /dev/null 2> /dev/null
 service squid3 restart > /dev/null 2> /dev/null
 addihost
 removerhostf
-echo -e "\033[1;37mPara adicionar novos hosts ao squid execute o comando \033[1;32maddhost
-\033[1;37mPara remover execute o comando \033[1;32mremoverhost\033[1;37m
-Os hosts ficam no arquivo /etc/payloads\033[0m"
-echo -e "\033[01;31mTudo terminado crie um usuario e teste !! \033[0m"
+echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
+\033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
+Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
+echo -e "\033[01;31mFinalizado !! \033[0m"
 }
 function sistemadetalhes(){
 if [ -f /proc/cpuinfo ]
@@ -303,11 +303,11 @@ echo -e "\033[1;32mMemoria Cache:\033[0m$cache"
 echo -e "\033[1;32mArquitetura: \033[0m$(uname -p)"
 else
 echo -e "\033[1;30mProcessador\033[0m"
-echo "Não foi possivel encontrar /proc/cpuinfo"
+echo "No fue posible encontrar /proc/cpuinfo"
 fi
 if [ -f /etc/lsb-release ]
 then
-echo -e "\n\033[1;30mSistema Operacional\033[0m"
+echo -e "\n\033[1;30mSistema Operativo\033[0m"
 name=$(cat /etc/lsb-release |grep DESCRIPTION |awk -F = {'print $2'})
 codename=$(cat /etc/lsb-release |grep CODENAME |awk -F = {'print $2'})
 echo -e "\033[1;32mNome: \033[0m$name"
@@ -317,31 +317,31 @@ echo -e "\033[1;32mKernel Release: \033[0m$(uname -r)"
 if [ -f /etc/os-release ]
 then
 devlike=$(cat /etc/os-release |grep LIKE |awk -F = {'print $2'})
-echo -e "\033[1;32mDerivado do Antecedente OS: \033[0m$devlike"
+echo -e "\033[1;32mDerivado del sistema OS: \033[0m$devlike"
 fi
 else
-echo -e "\n\033[1;30mSistema Operacional\033[0m"
-echo "Não foi possivel encontrar /etc/lsb-release"
+echo -e "\n\033[1;30mSistema Operativo\033[0m"
+echo "No fue posible encontrar /etc/lsb-release"
 fi
 if free 1>/dev/null 2>/dev/null
 then
 echo -e "\n\033[1;30mMemoria RAM\033[0m"
 echo -e "\033[1;32mTotal: \033[0m$(free -m |grep -i mem |awk {'print $2'}) MB | $(( $(free -m |grep -i mem |awk {'print $2'}) / 1024 )) GB"
-echo -e "\033[1;32mEm Uso: \033[0m$(free -m |grep -i mem |awk {'print $3'}) MB | $(( $(free -m |grep -i mem |awk {'print $3'}) / 1024 )) GB"
-echo -e "\033[1;32mLivre: \033[0m$(free -m |grep -i mem |awk {'print $4'}) MB | $(( $(free -m |grep -i mem |awk {'print $4'}) / 1024 )) GB"
+echo -e "\033[1;32mEn Uso: \033[0m$(free -m |grep -i mem |awk {'print $3'}) MB | $(( $(free -m |grep -i mem |awk {'print $3'}) / 1024 )) GB"
+echo -e "\033[1;32mLibre: \033[0m$(free -m |grep -i mem |awk {'print $4'}) MB | $(( $(free -m |grep -i mem |awk {'print $4'}) / 1024 )) GB"
 echo -e "\n\033[1;30mSwap\033[0m"
 echo -e "\033[1;32mTotal: \033[0m$(free -m |grep -i swap |awk {'print $2'}) MB | $(( $(free -m |grep -i swap |awk {'print $2'}) / 1024 )) GB"
-echo -e "\033[1;32mEm Uso: \033[0m$(free -m |grep -i swap |awk {'print $3'}) MB | $(( $(free -m |grep -i swap |awk {'print $3'}) / 1024 )) GB"
-echo -e "\033[1;32mLivre: \033[0m$(free -m |grep -i swap |awk {'print $4'}) MB | $(( $(free -m |grep -i swap |awk {'print $4'}) / 1024 )) GB"
+echo -e "\033[1;32mEn Uso: \033[0m$(free -m |grep -i swap |awk {'print $3'}) MB | $(( $(free -m |grep -i swap |awk {'print $3'}) / 1024 )) GB"
+echo -e "\033[1;32mLibre: \033[0m$(free -m |grep -i swap |awk {'print $4'}) MB | $(( $(free -m |grep -i swap |awk {'print $4'}) / 1024 )) GB"
 else
 echo -e "\n\033[1;30mMemoria RAM\033[0m"
-echo "Não foi possivel obter informações sobre a memoria RAM"
+echo "No fue posible obtener informacion sobre la memoria RAM"
 fi
 }
 function monitorar(){
 clear
 echo -e "\033[1;37m -------------------------------------------------------\033[0m"
-echo -e " \033[47;30m   Usuario                :               Conexoes S   \033[0m"
+echo -e " \033[47;30m   Usuario                :               Conexiones S   \033[0m"
 echo -e "\033[1;37m -------------------------------------------------------\033[0m"
 for usur in `awk -F : '$3 > 900 { print $1 }' /etc/passwd |grep -v "nobody" |grep -vi polkitd |grep -vi systemd-[a-z] |grep -vi systemd-[0-9] |sort`; do
 if [ -f /etc/VpsPackdir/limite/$usur ]; then
@@ -383,16 +383,16 @@ done
 }
 function criarusuarioteste(){
 mkdir /etc/usuariosteste 1>/dev/null 2>/dev/null
-echo -e "   Usuarios teste"
+echo -e "   Usuarios de prueba"
 for testus in $(ls /etc/usuariosteste |sort |sed 's/.sh//g')
 do
 echo "$testus"
 done
 printf "\n"
-printf "Nome do novo usuario: "; read nome
-printf "Senha do usuario: "; read pass
-echo -e "\nUse s = segundos, m = minutos, h = horas e d = dias EX: 14s ."
-printf "Quanto tempo usuario $nome deve durar: ";read tempoin
+printf "Nombre del usuario: "; read nome
+printf "Contraseña del usuario: "; read pass
+echo -e "\nUsa s = segundos, m = minutos, h = horas e d = dias Ejemplo: 14s ."
+printf "Cuanto tiempo la cuenta $nome debe durar: ";read tempoin
 tempo=$(echo "$tempoin" |sed 's/ //g')
 useradd -M -s /bin/false $nome
 (echo $pass;echo $pass) |passwd $nome 1>/dev/null 2>/dev/null
@@ -405,15 +405,15 @@ exit" > /etc/usuariosteste/$nome.sh
 echo -e "Usuario: $nome
 Senha: $pass
 Validade: $tempo\n
-Apos o tempo expirar o usuario sera deletado e todos serão desconectados."
+Despues de expirar, los usuarios seran desconectados."
 bash /etc/usuariosteste/$nome.sh &
 exit
 }
 function badvpn_install(){
-wget https://raw.githubusercontent.com/RicKbrL/VpsConf/master/badvpn.sh && bash badvpn.sh
+wget https://raw.githubusercontent.com/angelbanderasl/VpsConf/master/badvpn.sh && bash badvpn.sh
 }
 function removerlimite(){
-echo -ne "\033[1;32mQual usuario a retirar o limite: \033[0m"
+echo -ne "\033[1;32mNombre del usuario a modificar: \033[0m"
 read user
 cronsemuser=$(cat /etc/crontab |grep -v "#$user#")
 echo "$cronsemuser" > /etc/crontab
@@ -428,15 +428,15 @@ echo -e "\033[1;37mUsuario: $user, Limite removido\033[0m"
 }
 function backup_de_usuarios(){
 clear
-echo -e "\033[1;37mFazendo Backup de Usuarios...\033[0m"
+echo -e "\033[1;37mHaciendo Backup de Usuarios...\033[0m"
 for user in `awk -F : '$3 > 900 { print $1 }' /etc/passwd |grep -v "nobody" |grep -vi polkitd |grep -vi systemd-[a-z] |grep -vi systemd-[0-9]`
 do
 if [ -e /etc/VpsPackdir/senha/$user ]
 then
 pass=$(cat /etc/VpsPackdir/senha/$user)
 else
-echo -e "\033[1;31mNão foi possivel ter a senha do usuario\033[1;37m ($user)"
-read -p "Digite a Senha Manualmente ou Tecle ENTER: " pass
+echo -e "\033[1;31mNo fue posible obtener la contraseña del usuario\033[1;37m ($user)"
+read -p "Introduzca la contraseña manualmente o pulse ENTER: " pass
 fi
 
 if [ -e /etc/VpsPackdir/limite/$user ]
@@ -450,27 +450,27 @@ echo -e "\033[1;37mUser $user Backup [\033[1;31mOK\033[1;37m]\033[0m"
 fi
 done
 echo " "
-echo -e "\033[1;31mBackup Completo !!!\033[0m"
+echo -e "\033[1;31mBackup Completado !!!\033[0m"
 echo " "
-echo -e "\033[1;37mAs informações sobre usuarios ficam no arquivo \033[1;31m /etc/VpsPackdir/backup \033[1;37m
-Guarde os Para uma futura Restauração\033[0m"
+echo -e "\033[1;37mLa informacion de los usuarios se encuentra en el archivo \033[1;31m /etc/VpsPackdir/backup \033[1;37m
+Guardelo para una futura restauracion\033[0m"
 }
 function mudarnome(){
-printf "Usuario qual deseja mudar o nome: "; read user
+printf "Usuario al cual desea cambiarle el nombre: "; read user
 if cat /etc/passwd |grep $user: >/dev/null 2>/dev/null
 then
 printf ""
 else
-echo "Usuario não existe"
+echo "Usuario no existe"
 exit
 fi
-printf "Novo nome para usuario $user: "; read nome
+printf "Nuevo nombre para el usuario $user: "; read nome
 usermod -l $nome $user 1>/dev/null 2>/dev/null
-echo -e "\nUsuario: $user, Novo nome: $nome."
+echo -e "\nUsuario: $user, Nuevo nombre: $nome."
 exit
 }
 function firewallblock(){
-read -p "Digite o ip do vps: " ip
+read -p "Escriba la direccion ip de su vps: " ip
 echo Configurando...
 sleep 1
 iptables -P INPUT DROP
@@ -506,9 +506,9 @@ iptables -A INPUT -p icmp --icmp-type echo-request -j DROP
 iptables -A INPUT -p tcp --dport 10000 -j ACCEPT
 iptables -A OUTPUT -p tcp --dport 10000 -j ACCEPT
 echo -e "\033[1;37mFirewall modificado
-Portas 443 22 8799 8080 80 3128
-Bloqueio ICMP
-Bloqueio Torrent\033[0m"
+Puertos 443 22 8799 8080 80 3128
+Bloqueado ICMP
+Bloqueado Torrent\033[0m"
 }
 function resetfirewall(){
 iptables -F
@@ -519,13 +519,13 @@ iptables -t nat -F
 iptables -t nat -X
 iptables -t filter -F
 iptables -t filter -X
-echo "Regras resetadas"
+echo "Reglas restablecidas"
 }
 function detalhes_usuarios(){
 clear
 
 echo -e "\033[1;30m----------------------------------------------------------------------\033[0m"
-echo -e "\033[1;37m Usuario               Senha               Data E.          Logins S. \033[0m"
+echo -e "\033[1;37m Usuario               Contraseña           Fecha E.          Logins S. \033[0m"
 echo -e "\033[1;30m----------------------------------------------------------------------\033[0m"
 for users in `awk -F : '$3 > 900 { print $1 }' /etc/passwd |sort |grep -v "nobody" |grep -vi polkitd |grep -vi system-`
 do
@@ -558,7 +558,7 @@ echo -e "\033[1;30m-------------------------------------------------------------
 done
 }
 function restaurar_usuarios(){
-echo -n "Digite o diretorio do arquivo Backup: "
+echo -n "Escriba el directorio del archivo Backup: "
 read arq
 echo -e "\033[1;37mRestaurando Usuarios...\033[0m"
 
@@ -597,10 +597,10 @@ if [ -f /etc/bannerssh ]
 then
 banner=$(cat /etc/bannerssh)
 else
-banner="Não há um banner no momento"
+banner="No hay un banner de momento"
 fi
 echo -e "\033[1;32mBanner atual\n\n\033[1;37m$banner\n\033[0m"
-echo "Qual banner deseja adicionar (ctrl + c para sair )"
+echo "Cual es el banner que desea agregar (ctrl + c para salir )"
 read -p ": " bannerssh
 echo "$bannerssh" > /etc/bannerssh
 service ssh restart 1> /dev/null 2>/dev/null
@@ -612,7 +612,7 @@ do
 userpid=$(ps -u $user |awk {'print $1'})
 kill "$userpid" 2>/dev/null
 userdel $user
-echo "$user Deletado"
+echo "$user Eliminado"
 done
 }
 clear

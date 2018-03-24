@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-echo -e "\033[1;33mUserback options:\033[1;30m
+echo -e "\033[1;33mOpciones:\033[1;30m
 1) Eliminar usuario
 2) Eliminar y desconectar todos los usuarios
 3) Desconectar todos los usuarios\033[0m"

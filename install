@@ -33,5 +33,6 @@ echo -e "\n\033[1;32mvpspack \033[1;30mMenu de opciones"
 echo -e "\033[1;32mOpcion 3 \033[1;30mCrear un usuario con fecha y limite"
 echo -e "\033[1;32mOpcion 12 \033[1;30mBorrar un usuario o desconectarlo"
 echo -e "\033[1;32mOpcion 11 \033[1;30mCambiar contraseña, fecha o limite"
+echo -e "\033[1;32mModificada por: \033[1;30mAngel Banderas"
 echo -e "\033[1;32mInstalada \033[1;30mVersion 2.1\033[0m"
 rm -rf install

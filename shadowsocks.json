@@ -1,8 +1,9 @@
+IP=`cat /var/log/auth.log | grep -i sshd | grep -i "Accepted password for" | grep "sshd\[$PID\]" | awk '{print $11}'`;
 {
-   "server":"[server ip address]",
+   "server":"[$IP]",
    "server_port":8388,
    "local_port":0,
-   "password":"[password]",
+   "password":"[12345]",
    "timeout":600,
    "method":"aes-256-cfb"
 }

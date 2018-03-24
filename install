@@ -2,7 +2,7 @@
 cd
 if [ $(id -u) != 0 ]
 then
-echo "Execute o script como root"
+echo "Ejecute el script como root"
 exit
 fi
 echo -e "\033[1;30mInstalando...\033[0m"

@@ -580,6 +580,10 @@ function dropbear(){
 cd ~/
 ./dropbear
 }
+function shadowsocks(){
+cd ~/
+./shadowsocks
+}
 function resetfirewall(){
 iptables -F
 iptables -X
@@ -715,7 +719,8 @@ echo -e "\033[1;37mSeleccione una opcion:    Para Salir pulse Ctrl + C\033[0;32m
 [\033[1;30m23\033[0;32m] Sistema_Detalles \033[1;30m(Detalles sobre el Sistema)\033[0;32m
 [\033[1;30m24\033[0;32m] Eliminar_Todos \033[1;30m(Todos los usuarios seran eliminados)\033[0;32m
 [\033[1;30m25\033[0;32m] Desinstalar \033[1;30m(Remover VpsPack)\033[0m
-[\033[1;30m26\033[0;32m] Dropbear \033[1;30m(Ver usuarios conectados en Dropbear)\033[0;32m"
+[\033[1;30m26\033[0;32m] Dropbear \033[1;30m(Ver usuarios conectados en Dropbear)\033[0;32m
+[\033[1;30m26\033[0;32m] Shadowsocs \033[1;30m(Instalar shadowsocs)\033[0;32m"
 
 read -p ": " opcao
 else
@@ -781,4 +786,6 @@ case $opcao in
    rm -rf /bin/vpspack 2>/dev/null;;
    26)
    dropbear;;
+   27)
+   shadowsocks;;
 esac

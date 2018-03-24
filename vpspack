@@ -43,6 +43,7 @@ echo -e "\033[1;31m-----> \033[01;37mSistema:\033[1;31m $sistema"
 echo -e "\033[1;31m-----> \033[01;37mSu ip agregada:\033[1;31m $ip"
 echo -e "\033[1;31m-----> \033[1;37mSQUID:\033[1;31m 80, 8080, 8799, 3128\033[0m"
 echo -e "\033[1;31m-----> \033[1;37mPuertos SSH: \033[1;31m443, 22\033[0m"
+echo -e "\033[1;31m-----> \033[1;37mDropbear Puertos: \033[1;31m444\033[0m"
 echo -e "\033[1;31m-----> \033[1;37mIPS/Hosts SSH: \033[1;31m$ip, localhost, 127.0.0.1\033[0m"
 echo -e "\033[1;31m-----> \033[1;37mHerramienta para agregar Hosts:\033[1;31m addhost\033[0m"
 
@@ -110,10 +111,22 @@ addihost
 removerhostf
 payloads
 service squid restart 1> /dev/null 2> /dev/null
+apt-get -y install dropbear
+sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 80"/g' /etc/default/dropbear
+echo "/bin/false" >> /etc/shells
+echo "/usr/sbin/nologin" >> /etc/shells
+service ssh restart
+service dropbear restart
 echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
 \033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
 Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
 echo -e "\033[01;31mFinalizado !! \033[0m"
+echo -e "\033[01;31mPuertos Agregados: \033[0m"
+echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
+echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
+echo -e "\033[01;31mDropbear: 444 \033[0m"
 exit 0
 fi
 
@@ -145,10 +158,22 @@ payloads
 service squid3 restart 1> /dev/null 2> /dev/null
 addihost
 removerhostf
+apt-get -y install dropbear
+sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 8080"/g' /etc/default/dropbear
+echo "/bin/false" >> /etc/shells
+echo "/usr/sbin/nologin" >> /etc/shells
+service ssh restart
+service dropbear restart
 echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
 \033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
 Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
 echo -e "\033[01;31mFinalizado !! \033[0m"
+echo -e "\033[01;31mPuertos Agregados: \033[0m"
+echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
+echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
+echo -e "\033[01;31mDropbear: 444 \033[0m"
 exit 0
 fi
 
@@ -184,6 +209,10 @@ echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
 \033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
 Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
 echo -e "\033[01;31mFinalizado !! \033[0m"
+echo -e "\033[01;31mPuertos Agregados: \033[0m"
+echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
+echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
+echo -e "\033[01;31mDropbear: 444 \033[0m"
 exit
 fi
 
@@ -215,10 +244,23 @@ payloads
 service squid3 restart 1> /dev/null 2> /dev/null
 addihost
 removerhostf
+apt-get -y install dropbear
+sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 8080"/g' /etc/default/dropbear
+echo "/bin/false" >> /etc/shells
+echo "/usr/sbin/nologin" >> /etc/shells
+service ssh restart
+service dropbear restart
 echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
 \033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
 Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
 echo -e "\033[01;31mFinalizado !! \033[0m"
+echo -e "\033[01;31mFinalizado, cree un usuario de prueba !! \033[0m"
+echo -e "\033[01;31mPuertos Agregados: \033[0m"
+echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
+echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
+echo -e "\033[01;31mDropbear: 444 \033[0m"
 exit 0
 fi
 if cat /etc/issue |grep -i kernel 1> /dev/null 2> /dev/null ; then
@@ -249,10 +291,22 @@ payloads
 service squid restart 1> /dev/null 2> /dev/null
 addihost
 removerhostf
+apt-get -y install dropbear
+sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 8080"/g' /etc/default/dropbear
+echo "/bin/false" >> /etc/shells
+echo "/usr/sbin/nologin" >> /etc/shells
+service ssh restart
+service dropbear restart
 echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
 \033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
 Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
 echo -e "\033[01;31mFinalizado !! \033[0m"
+echo -e "\033[01;31mPuertos Agregados: \033[0m"
+echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
+echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
+echo -e "\033[01;31mDropbear: 444 \033[0m"
 exit
 fi
 echo -e "\033[01;31mConfigurando, Espere...\033[0m"
@@ -285,10 +339,22 @@ service squid restart 1> /dev/null 2> /dev/null
 service squid3 restart > /dev/null 2> /dev/null
 addihost
 removerhostf
+apt-get -y install dropbear
+sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 8080"/g' /etc/default/dropbear
+echo "/bin/false" >> /etc/shells
+echo "/usr/sbin/nologin" >> /etc/shells
+service ssh restart
+service dropbear restart
 echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
 \033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
 Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
 echo -e "\033[01;31mFinalizado !! \033[0m"
+echo -e "\033[01;31mPuertos Agregados: \033[0m"
+echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
+echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
+echo -e "\033[01;31mDropbear: 444 \033[0m"
 }
 function sistemadetalhes(){
 if [ -f /proc/cpuinfo ]
@@ -371,7 +437,7 @@ if [[ $dataexpnum < $datahoje ]]; then
 printf "\033[1;31m"
 printf '%-41s' $user
 printf "\033[0m"
-echo "Expired Deleted"
+echo "Usuario expirado eliminado"
 kill $(ps -u $user |awk '{print $1}') >/dev/null 2>/dev/null ; userdel $user
 else
 printf "\033[1;32m"
@@ -510,6 +576,10 @@ Puertos 443 22 8799 8080 80 3128
 Bloqueado ICMP
 Bloqueado Torrent\033[0m"
 }
+function dropbear(){
+cd ~/
+./dropbear
+}
 function resetfirewall(){
 iptables -F
 iptables -X
@@ -645,6 +715,8 @@ echo -e "\033[1;37mSeleccione una opcion:    Para Salir pulse Ctrl + C\033[0;32m
 [\033[1;30m23\033[0;32m] Sistema_Detalles \033[1;30m(Detalles sobre el Sistema)\033[0;32m
 [\033[1;30m24\033[0;32m] Eliminar_Todos \033[1;30m(Todos los usuarios seran eliminados)\033[0;32m
 [\033[1;30m25\033[0;32m] Desinstalar \033[1;30m(Remover VpsPack)\033[0m"
+[\033[1;30m26\033[0;32m] Dropbear \033[1;30m(Ver usuarios conectados en Dropbear)\033[0;32m"
+
 read -p ": " opcao
 else
 opcao=$1
@@ -707,4 +779,6 @@ case $opcao in
    rm -rf /bin/limite 2>/dev/null
    rm -rf /bin/criarusuario 2>/dev/null
    rm -rf /bin/vpspack 2>/dev/null;;
+   26)
+   dropbear;;
 esac

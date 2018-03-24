@@ -111,6 +111,10 @@ addihost
 removerhostf
 payloads
 service squid restart 1> /dev/null 2> /dev/null
+sudo apt-get install python-pip -y
+sudo pip install -i https://pypi.python.org/simple/ --upgrade pip
+pip install shadowsocks
+sed -i 's/Ipaddress/$ip/g' /etc/shadowsocks.json
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
@@ -119,6 +123,7 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 service ssh restart
 service dropbear restart
+sudo ssserver -c /etc/shadowsocks.json -d start
 echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
 \033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
 Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
@@ -158,14 +163,19 @@ payloads
 service squid3 restart 1> /dev/null 2> /dev/null
 addihost
 removerhostf
+sudo apt-get install python-pip -y
+sudo pip install -i https://pypi.python.org/simple/ --upgrade pip
+pip install shadowsocks
+sed -i 's/Ipaddress/$ip/g' /etc/shadowsocks.json
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 8080"/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 80"/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 service ssh restart
 service dropbear restart
+sudo ssserver -c /etc/shadowsocks.json -d start
 echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
 \033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
 Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
@@ -244,14 +254,19 @@ payloads
 service squid3 restart 1> /dev/null 2> /dev/null
 addihost
 removerhostf
+sudo apt-get install python-pip -y
+sudo pip install -i https://pypi.python.org/simple/ --upgrade pip
+pip install shadowsocks
+sed -i 's/Ipaddress/$ip/g' /etc/shadowsocks.json
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 8080"/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 80"/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 service ssh restart
 service dropbear restart
+sudo ssserver -c /etc/shadowsocks.json -d start
 echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
 \033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
 Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
@@ -291,14 +306,19 @@ payloads
 service squid restart 1> /dev/null 2> /dev/null
 addihost
 removerhostf
+sudo apt-get install python-pip -y
+sudo pip install -i https://pypi.python.org/simple/ --upgrade pip
+pip install shadowsocks
+sed -i 's/Ipaddress/$ip/g' /etc/shadowsocks.json
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 8080"/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 80"/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 service ssh restart
 service dropbear restart
+sudo ssserver -c /etc/shadowsocks.json -d start
 echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
 \033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
 Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
@@ -339,14 +359,19 @@ service squid restart 1> /dev/null 2> /dev/null
 service squid3 restart > /dev/null 2> /dev/null
 addihost
 removerhostf
+sudo apt-get install python-pip -y
+sudo pip install -i https://pypi.python.org/simple/ --upgrade pip
+pip install shadowsocks
+sed -i 's/Ipaddress/$ip/g' /etc/shadowsocks.json
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
-sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 8080"/g' /etc/default/dropbear
+sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 80"/g' /etc/default/dropbear
 echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 service ssh restart
 service dropbear restart
+sudo ssserver -c /etc/shadowsocks.json -d start
 echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
 \033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
 Los hosts se encuentran en el archivo: /etc/payloads\033[0m"

@@ -1,4 +1,3 @@
-IP=`cat /var/log/auth.log | grep -i sshd | grep -i "Accepted password for" | grep "sshd\[$PID\]" | awk '{print $11}'`;
 {
    "server":"[ $IP ]",
    "server_port":8388,

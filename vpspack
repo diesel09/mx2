@@ -619,31 +619,31 @@ clear
 if [[ $1 == "" ]]
 then
 echo -e "\033[1;37m       VpsPack V2 © MX (Angel Banderas) \033[0m"
-echo -e "\033[1;37mSeleccione una opcion:    Para Salir pulse Ctrl + C\033[1;33m
-[\033[1;30m01\033[0;32m] Configurar_Squid_SSH \033[1;30m(Configuracion Squid y OpenSSH)\033[1;33m
-[\033[1;30m02\033[0;32m] Limite \033[1;30m(Limite de conexoes simultaneas)\033[1;33m
-[\033[1;30m03\033[0;32m] Crear_Usuario \033[1;30m(Crear usuarios)\033[1;33m
-[\033[1;30m04\033[0;32m] Remover_expirados \033[1;30m(Remover usuarios expirados)\033[1;33m
-[\033[1;30m05\033[0;32m] Crear_Prueba \033[1;30m(Crear usuarios de corta duracion)\033[1;33m
-[\033[1;30m06\033[0;32m] BadVpn \033[1;30m(Instala badvpn para tunnel udp)\033[1;33m
-[\033[1;30m07\033[0;32m] BadVpn_Start \033[1;30m(Activar llamadas voip, juegos online, etc)\033[1;33m
-[\033[1;30m08\033[0;32m] BadVpn_Stop \033[1;30m(Parar servicio de badvpn)\033[1;33m
-[\033[1;30m09\033[0;32m] Remover_Limite \033[1;30m(Remover limite de conexiones de un usuario)\033[1;33m
-[\033[1;30m10\033[0;32m] Cambiar_Nombre \033[1;30m(Cambiar nombre de un usuario)\033[1;33m
-[\033[1;30m11\033[0;32m] Redefinir_Usuario \033[1;30m(Cambiar fecha, contraseña, etc)\033[1;33m
-[\033[1;30m12\033[0;32m] Eliminar_Usuario \033[1;30m(Menu Eliminar, Desconectar, etc)\033[1;33m
-[\033[1;30m13\033[0;32m] Firewall-block \033[1;30m(Bloquear torrent, icmp [\033[1;31mRIESGO\033[1;30m])\033[1;33m
-[\033[1;30m14\033[0;32m] Reset_Firewall \033[1;30m(Resetear reglas iptables [\033[1;31mRIESGO\033[1;30m])\033[1;33m
-[\033[1;30m15\033[0;32m] Addhost \033[1;30m(Agregar Hosts )\033[1;33m
-[\033[1;30m16\033[0;32m] Remover_Host \033[1;30m(Remover Hosts)\033[1;33m
-[\033[1;30m17\033[0;32m] Monitoriar \033[1;30m(Monitoriar conexiones)\033[0m\033[1;33m
-[\033[1;30m18\033[0;32m] Backup-Users \033[1;30m(Respaldo de usuarios)\033[1;33m
-[\033[1;30m19\033[0;32m] Rest-Users \033[1;30m(Restaurar usuarios de un backup)\033[1;33m
-[\033[1;30m20\033[0;32m] Usuarios_Detalles \033[1;30m(Informacion sobre los usuarios !!)\033[1;33m
-[\033[1;30m21\033[0;32m] Banner \033[1;30m(Agregar un banner)\033[1;33m
-[\033[1;30m22\033[0;32m] Speedtest \033[1;30m(Prueba de conexion [velocidad de banda])\033[1;33m
-[\033[1;30m23\033[0;32m] Sistema_Detalles \033[1;30m(Detalles sobre el Sistema)\033[1;33m
-[\033[1;30m24\033[0;32m] Eliminar_Todos \033[1;30m(Todos los usuarios seran eliminados)\033[1;33m
+echo -e "\033[1;37mSeleccione una opcion:    Para Salir pulse Ctrl + C\033[0;32m
+[\033[1;30m01\033[0;32m] Configurar_Squid_SSH \033[1;30m(Configuracion Squid y OpenSSH)\033[0;32m
+[\033[1;30m02\033[0;32m] Limite \033[1;30m(Limite de conexoes simultaneas)\033[0;32m
+[\033[1;30m03\033[0;32m] Crear_Usuario \033[1;30m(Crear usuarios)\033[0;32m
+[\033[1;30m04\033[0;32m] Remover_expirados \033[1;30m(Remover usuarios expirados)\033[0;32m
+[\033[1;30m05\033[0;32m] Crear_Prueba \033[1;30m(Crear usuarios de corta duracion)\033[0;32m
+[\033[1;30m06\033[0;32m] BadVpn \033[1;30m(Instala badvpn para tunnel udp)\033[0;32m
+[\033[1;30m07\033[0;32m] BadVpn_Start \033[1;30m(Activar llamadas voip, juegos online, etc)\033[0;32m
+[\033[1;30m08\033[0;32m] BadVpn_Stop \033[1;30m(Parar servicio de badvpn)\033[0;32m
+[\033[1;30m09\033[0;32m] Remover_Limite \033[1;30m(Remover limite de conexiones de un usuario)\033[0;32m
+[\033[1;30m10\033[0;32m] Cambiar_Nombre \033[1;30m(Cambiar nombre de un usuario)\033[0;32m
+[\033[1;30m11\033[0;32m] Redefinir_Usuario \033[1;30m(Cambiar fecha, contraseña, etc)\033[0;32m
+[\033[1;30m12\033[0;32m] Eliminar_Usuario \033[1;30m(Menu Eliminar, Desconectar, etc)\033[0;32m
+[\033[1;30m13\033[0;32m] Firewall-block \033[1;30m(Bloquear torrent, icmp [\033[1;31mRIESGO\033[1;30m])\033[0;32m
+[\033[1;30m14\033[0;32m] Reset_Firewall \033[1;30m(Resetear reglas iptables [\033[1;31mRIESGO\033[1;30m])\033[0;32m
+[\033[1;30m15\033[0;32m] Addhost \033[1;30m(Agregar Hosts )\033[0;32m
+[\033[1;30m16\033[0;32m] Remover_Host \033[1;30m(Remover Hosts)\033[0;32m
+[\033[1;30m17\033[0;32m] Monitoriar \033[1;30m(Monitoriar conexiones)\033[0m\033[0;32m
+[\033[1;30m18\033[0;32m] Backup-Users \033[1;30m(Respaldo de usuarios)\033[0;32m
+[\033[1;30m19\033[0;32m] Rest-Users \033[1;30m(Restaurar usuarios de un backup)\033[0;32m
+[\033[1;30m20\033[0;32m] Usuarios_Detalles \033[1;30m(Informacion sobre los usuarios !!)\033[0;32m
+[\033[1;30m21\033[0;32m] Banner \033[1;30m(Agregar un banner)\033[0;32m
+[\033[1;30m22\033[0;32m] Speedtest \033[1;30m(Prueba de conexion [velocidad de banda])\033[0;32m
+[\033[1;30m23\033[0;32m] Sistema_Detalles \033[1;30m(Detalles sobre el Sistema)\033[0;32m
+[\033[1;30m24\033[0;32m] Eliminar_Todos \033[1;30m(Todos los usuarios seran eliminados)\033[0;32m
 [\033[1;30m25\033[0;32m] Desinstalar \033[1;30m(Remover VpsPack)\033[0m"
 read -p ": " opcao
 else

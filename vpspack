@@ -32,6 +32,8 @@ if [ -f /etc/lsb-release ]
 then
 sistema=$(cat /etc/lsb-release |grep "DISTRIB_DESCRIPTION" | awk -F = '{print $2}' |sed 's/"//g')
 else
+sistema=$(cat /etc/issue)
+else
 sistema=Null
 fi
 echo -e "\033[1;31mPara que la instalacion sea correcta se necesita una ip.

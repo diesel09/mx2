@@ -111,10 +111,6 @@ addihost
 removerhostf
 payloads
 service squid restart 1> /dev/null 2> /dev/null
-sudo apt-get install python-pip -y
-sudo pip install -i https://pypi.python.org/simple/ --upgrade pip
-pip install shadowsocks
-sed -i 's/Ipaddress/$ip/g' /etc/shadowsocks.json
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
@@ -123,7 +119,6 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 service ssh restart
 service dropbear restart
-sudo ssserver -c /etc/shadowsocks.json -d start
 echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
 \033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
 Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
@@ -163,10 +158,6 @@ payloads
 service squid3 restart 1> /dev/null 2> /dev/null
 addihost
 removerhostf
-sudo apt-get install python-pip -y
-sudo pip install -i https://pypi.python.org/simple/ --upgrade pip
-pip install shadowsocks
-sed -i 's/Ipaddress/$ip/g' /etc/shadowsocks.json
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
@@ -175,7 +166,6 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 service ssh restart
 service dropbear restart
-sudo ssserver -c /etc/shadowsocks.json -d start
 echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
 \033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
 Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
@@ -254,10 +244,6 @@ payloads
 service squid3 restart 1> /dev/null 2> /dev/null
 addihost
 removerhostf
-sudo apt-get install python-pip -y
-sudo pip install -i https://pypi.python.org/simple/ --upgrade pip
-pip install shadowsocks
-sed -i 's/Ipaddress/$ip/g' /etc/shadowsocks.json
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
@@ -266,7 +252,6 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 service ssh restart
 service dropbear restart
-sudo ssserver -c /etc/shadowsocks.json -d start
 echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
 \033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
 Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
@@ -306,10 +291,6 @@ payloads
 service squid restart 1> /dev/null 2> /dev/null
 addihost
 removerhostf
-sudo apt-get install python-pip -y
-sudo pip install -i https://pypi.python.org/simple/ --upgrade pip
-pip install shadowsocks
-sed -i 's/Ipaddress/$ip/g' /etc/shadowsocks.json
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
@@ -359,10 +340,6 @@ service squid restart 1> /dev/null 2> /dev/null
 service squid3 restart > /dev/null 2> /dev/null
 addihost
 removerhostf
-sudo apt-get install python-pip -y
-sudo pip install -i https://pypi.python.org/simple/ --upgrade pip
-pip install shadowsocks
-sed -i 's/Ipaddress/$ip/g' /etc/shadowsocks.json
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=444/g' /etc/default/dropbear
@@ -371,7 +348,6 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 service ssh restart
 service dropbear restart
-sudo ssserver -c /etc/shadowsocks.json -d start
 echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
 \033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
 Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
@@ -605,10 +581,6 @@ function dropbear(){
 cd ~/
 ./dropbear
 }
-function shadowsocks(){
-cd ~/
-./shadowsocks
-}
 function resetfirewall(){
 iptables -F
 iptables -X
@@ -744,8 +716,7 @@ echo -e "\033[1;37mSeleccione una opcion:    Para Salir pulse Ctrl + C\033[0;32m
 [\033[1;30m23\033[0;32m] Sistema_Detalles \033[1;30m(Detalles sobre el Sistema)\033[0;32m
 [\033[1;30m24\033[0;32m] Eliminar_Todos \033[1;30m(Todos los usuarios seran eliminados)\033[0;32m
 [\033[1;30m25\033[0;32m] Desinstalar \033[1;30m(Remover VpsPack)\033[0m
-[\033[1;30m26\033[0;32m] Dropbear \033[1;30m(Ver usuarios conectados en Dropbear)\033[0;32m
-[\033[1;30m26\033[0;32m] Shadowsocs \033[1;30m(Instalar shadowsocs)\033[0;32m"
+[\033[1;30m26\033[0;32m] Dropbear \033[1;30m(Ver usuarios conectados en Dropbear)\033[0;32m"
 
 read -p ": " opcao
 else
@@ -811,6 +782,4 @@ case $opcao in
    rm -rf /bin/vpspack 2>/dev/null;;
    26)
    dropbear;;
-   27)
-   shadowsocks;;
 esac

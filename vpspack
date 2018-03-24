@@ -28,7 +28,7 @@ fi
 function configurarsquid(){
 clear
 cat -n /etc/issue |grep 1 |cut -d' ' -f6,7,8 |sed 's/1//' |sed 's/	//' > /etc/so 
-if [ -f /etc/issue ]
+if [ -f /etc/lsb-release ]
 then
 sistema=$(cat /etc/issue)
 else

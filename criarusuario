@@ -16,7 +16,7 @@ then
 		( echo "$pass";echo "$pass" ) | passwd $name 2> /dev/null
 		limite $name $limiteuser
 		echo -e "\033[1;36mUsuario: \033[0m$name"
-		echo -e "\033[1;36mSenha: \033[0m$pass"
+		echo -e "\033[1;36mContraseña: \033[0m$pass"
 		echo -e "\033[1;36mExpira:\033[0m $datexp"
 	    echo "$pass" > /etc/VpsPackdir/senha/$name
 	fi

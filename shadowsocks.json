@@ -1,8 +1,0 @@
-{
-   "server":"[ Ipaddress ]",
-   "server_port":8388,
-   "local_port":0,
-   "password":"[12345]",
-   "timeout":600,
-   "method":"aes-256-cfb"
-}

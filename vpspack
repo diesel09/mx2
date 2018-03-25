@@ -485,16 +485,6 @@ bash banner
 function badvpn_install(){
 bash badvpn
 }
-function shadowsocks_install(){
-bash shadowsocks
-echo -e "\033[01;31mFinalizado !! \033[0m"
-echo -e "\033[01;31mPuertos Agregados: \033[0m"
-echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
-echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
-echo -e "\033[01;31mDropbear: 444 \033[0m"
-echo -e "\033[01;31mShadowsocks: 447 \033[0m"
-echo -e "\033[01;31mbadVpn: 7300 \033[0m"
-}
 function removerlimite(){
 echo -ne "\033[1;32mNombre del usuario a modificar: \033[0m"
 read user
@@ -696,7 +686,7 @@ case $opcao in
   1 | 01 )
    badvpn_install
    configurarsquid
-   shadowsocks_install;;
+   bash shadowsocks;;
   2 | 02 )
    read -p "Usuario: " user
    read -p "Limite: " limite

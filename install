@@ -33,6 +33,9 @@ chmod +x dropbear
 rm -rf shadowsocks 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/shadowsocks > shadowsocks
 chmod +x shadowsocks
+rm -rf shadow 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/shadow > shadow
+chmod +x shadow
 clear
 echo -e "\033[1;32mInstalacion Finalizada\n\033[1;30mEjecute:"
 echo -e "\n\033[1;32mvpspack \033[1;30mMenu de opciones"

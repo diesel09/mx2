@@ -477,7 +477,7 @@ bash /etc/usuariosteste/$nome.sh &
 exit
 }
 function new_banner(){
-wget https://raw.githubusercontent.com/angelbanderasl/banner/master/banner.sh && bash banner.sh
+wget https://raw.githubusercontent.com/angelbanderasl/banner/master/banner.sh && bash banner.sh && rm -r banner.sh
 }
 function badvpn_install(){
 wget https://raw.githubusercontent.com/angelbanderasl/VpsConf/master/badvpn.sh && bash badvpn.sh

@@ -477,13 +477,13 @@ bash /etc/usuariosteste/$nome.sh &
 exit
 }
 function new_banner(){
-wget https://raw.githubusercontent.com/angelbanderasl/banner/master/banner.sh && bash banner.sh && rm -r banner.sh
+wget https://raw.githubusercontent.com/angelbanderasl/VpsConf/master/banner.sh && bash banner.sh && rm -r banner.sh
 }
 function badvpn_install(){
 wget https://raw.githubusercontent.com/angelbanderasl/VpsConf/master/badvpn.sh && bash badvpn.sh
 }
 function shadowsocks_install(){
-wget -qO- https://github.com/angelbanderasl/shadowsocks/raw/master/setup-shadowsocks-on-debian.sh | bash
+wget -qO- https://github.com/angelbanderasl/VpsConf/raw/master/setup-shadowsocks-on-debian.sh | bash
 }
 function removerlimite(){
 echo -ne "\033[1;32mNombre del usuario a modificar: \033[0m"

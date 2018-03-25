@@ -37,6 +37,10 @@ fi
 echo -e "\033[1;31mPara que la instalacion sea correcta se necesita una ip.
 Digite su ip !\033[0m"
 read -p ": " ip
+sed -i "s/direccion/$ip/g" shadowsocks
+echo Introduce tu Contraseña para shadowsocks:
+read pass
+sed -i "s/contra/$pass/g" shadowsocks
 clear
 echo -e "\033[1;31m-----> \033[01;37mScript VPSPACK - V2.1 AngelBanderas\033[0m"
 echo -e "\033[1;31m-----> \033[01;37mSistema:\033[1;31m $sistema"

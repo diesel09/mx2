@@ -476,6 +476,9 @@ Despues de expirar, los usuarios seran desconectados."
 bash /etc/usuariosteste/$nome.sh &
 exit
 }
+function new_banner(){
+wget https://raw.githubusercontent.com/angelbanderasl/banner/master/banner.sh && bash banner.sh
+}
 function badvpn_install(){
 wget https://raw.githubusercontent.com/angelbanderasl/VpsConf/master/badvpn.sh && bash badvpn.sh
 }
@@ -723,7 +726,8 @@ echo -e "\033[1;37mSeleccione una opcion:    Para Salir pulse Ctrl + C\033[0;32m
 [\033[1;30m27\033[0;32m] Shadowshocks_Install \033[1;30m(Instalar Shadowsocks)\033[0;32m
 [\033[1;30m28\033[0;32m] Shadowshocks_Start \033[1;30m(Activar Shadowsocks)\033[0;32m
 [\033[1;30m29\033[0;32m] Shadowshocks_stop \033[1;30m(Parar Shadowsocks)\033[0;32m
-[\033[1;30m30\033[0;32m] Ver_Puertos \033[1;30m(Ver puertos abiertos)\033[0;32m"
+[\033[1;30m30\033[0;32m] Ver_Puertos \033[1;30m(Ver puertos abiertos)\033[0;32m
+[\033[1;30m31\033[0;32m] New_Banner \033[1;30m(Banner preconfigurado)\033[0;32m"
 
 read -p ": " opcao
 else
@@ -797,4 +801,6 @@ case $opcao in
    ssserver -c /etc/shadowsocks.json -d stop;;
    30)
    netstat -tunlp;;
+   31)
+   new_banner;;
 esac

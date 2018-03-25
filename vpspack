@@ -299,7 +299,6 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 service ssh restart
 service dropbear restart
-sudo ssserver -c /etc/shadowsocks.json -d start
 echo -e "\033[1;37mPara agregar nuevos hosts escriba: \033[1;32maddhost
 \033[1;37mPara quitar un host escriba: \033[1;32mremoverhost\033[1;37m
 Los hosts se encuentran en el archivo: /etc/payloads\033[0m"
@@ -483,7 +482,7 @@ function badvpn_install(){
 wget https://raw.githubusercontent.com/angelbanderasl/VpsConf/master/badvpn.sh && bash badvpn.sh
 }
 function shadowsocks_install(){
-wget -qO- https://github.com/angelbanderasl/VpsConf/raw/master/setup-shadowsocks-on-debian.sh | bash
+bash shadow
 }
 function removerlimite(){
 echo -ne "\033[1;32mNombre del usuario a modificar: \033[0m"

@@ -69,5 +69,6 @@ rclocale="
 badvpn start
 exit 0
 "
+badvpn start
 echo "$rclocale" > /etc/rc.local
 netstat -tunlp

@@ -703,60 +703,46 @@ case $opcao in
   5 | 05 )
    criarusuarioteste;;
   6 | 06 )
-   badvpn_install;;
+   menu_badvpn;;
   7 | 07 )
-   badvpn start;;
+   menu_shadowsocks;;
   8 | 08 )
-   badvpn stop;;
-  9 | 09 )
    removerlimite;;
-  10)
+  9 | 09 )
    mudarnome;; 
-  11)
+  10)
    redefinirusuario;;
-  12)
+  11)
    deletarusuario;;
+  12)
+   menu_hosts;;
   13)
    firewall;;
   14)
-   new_banner;;
+   menu_backup;;
   15)
-   menu_hosts;;
-  16)
-   removerhost;;
-  17)
    monitorar;;
-  18)
-   backup_de_usuarios;;
-  19)
-   restaurar_usuarios;;
-  20)
+  16)
    detalhes_usuarios;;
-  21)
+  17)
    banner;;
+  18)
+  speedtest.py;;
+  19)
+  sistemadetalhes;;
+  20)
+   dropbear;;
+  21)
+  deletar_todos;;
   22)
-   speedtest.py;;
+   netstat -tunlp;;
   23)
-   sistemadetalhes;;
-  24)
-   deletar_todos;;
-  25)
+   new_banner;;
+  1000)
    rm -rf /bin/speedtest.py 2>/dev/null
    rm -rf /bin/deletarusuario 2>/dev/null
    rm -rf /bin/redefinirusuario 2>/dev/null
    rm -rf /bin/limite 2>/dev/null
    rm -rf /bin/criarusuario 2>/dev/null
    rm -rf /bin/vpspack 2>/dev/null;;
-   26)
-   dropbear;;
-   27)
-   shadowsocks_install;;
-   28)
-   ssserver -c /etc/shadowsocks.json -d start;;
-   29)
-   ssserver -c /etc/shadowsocks.json -d stop;;
-   30)
-   netstat -tunlp;;
-   31)
-   new_banner;;
 esac

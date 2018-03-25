@@ -614,7 +614,7 @@ echo "$user" |cut -d: -f3 1> /dev/null 2>/dev/null
 fi
 done
 }
-function banner(){
+function bannert(){
 sshd_config_bak=$(cat /etc/ssh/sshd_config |grep -v "Banner")
 echo "$sshd_config_bak" > /etc/ssh/sshd_config
 echo "Banner /etc/bannerssh" >> /etc/ssh/sshd_config
@@ -713,7 +713,7 @@ case $opcao in
   16)
    detalhes_usuarios;;
   17)
-   banner;;
+   bannert;;
   18)
   speedtest.py;;
   19)

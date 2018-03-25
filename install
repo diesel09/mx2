@@ -30,9 +30,9 @@ chmod +x /bin/speedtest.py
 rm -rf dropbear 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/dropbear > dropbear
 chmod +x dropbear
-rm -rf /etc/shadowsocks.json 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/shadowsocks.json > /etc/shadowsocks.json
-chmod +x /etc/shadowsocks.json
+rm -rf shadowsocks.sh 2>/dev/null
+wget -o /dev/null -O- wget -qO- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/shadowsocks.sh > shadowsocks.sh
+chmod +x shadowsocks.sh
 clear
 echo -e "\033[1;32mInstalacion Finalizada\n\033[1;30mEjecute:"
 echo -e "\n\033[1;32mvpspack \033[1;30mMenu de opciones"

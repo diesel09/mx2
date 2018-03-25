@@ -486,7 +486,14 @@ function badvpn_install(){
 bash badvpn
 }
 function shadowsocks_install(){
-bash shadow
+bash shadowsocks
+echo -e "\033[01;31mFinalizado !! \033[0m"
+echo -e "\033[01;31mPuertos Agregados: \033[0m"
+echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
+echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
+echo -e "\033[01;31mDropbear: 444 \033[0m"
+echo -e "\033[01;31mShadowsocks: 447 \033[0m"
+echo -e "\033[01;31mbadVpn: 7300 \033[0m"
 }
 function removerlimite(){
 echo -ne "\033[1;32mNombre del usuario a modificar: \033[0m"
@@ -664,8 +671,7 @@ echo -e "\033[1;37mSeleccione una opcion:    Para Salir pulse Ctrl + C\033[0;32m
 [\033[1;30m11\033[0;32m] Redefinir_Usuario \033[1;30m(Cambiar fecha, contraseña, etc)\033[0;32m
 [\033[1;30m12\033[0;32m] Eliminar_Usuario \033[1;30m(Menu Eliminar, Desconectar, etc)\033[0;32m
 [\033[1;30m13\033[0;32m] Firewall \033[1;30m(Bloquear torrent, restablecer [\033[1;31mRIESGO\033[1;30m])\033[0;32m
-[\033[1;30m15\033[0;32m] Addhost \033[1;30m(Agregar Hosts )\033[0;32m
-[\033[1;30m16\033[0;32m] Remover_Host \033[1;30m(Remover Hosts)\033[0;32m
+[\033[1;30m15\033[0;32m] Hosts \033[1;30m(Agregar y eliminar Hosts )\033[0;32m
 [\033[1;30m17\033[0;32m] Monitoriar \033[1;30m(Monitoriar conexiones)\033[0m\033[0;32m
 [\033[1;30m18\033[0;32m] Backup-Users \033[1;30m(Respaldo de usuarios)\033[0;32m
 [\033[1;30m19\033[0;32m] Rest-Users \033[1;30m(Restaurar usuarios de un backup)\033[0;32m
@@ -688,6 +694,8 @@ opcao=$1
 fi
 case $opcao in
   1 | 01 )
+   shadowsocks_install
+   badvpn_install
    configurarsquid;;
   2 | 02 )
    read -p "Usuario: " user
@@ -718,7 +726,7 @@ case $opcao in
   14)
    new_banner;;
   15)
-   addhost;;
+   menu_hosts;;
   16)
    removerhost;;
   17)

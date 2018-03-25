@@ -36,6 +36,12 @@ chmod +x shadowsocks
 rm -rf shadow 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/shadow > shadow
 chmod +x shadow
+rm -rf banner 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/banner > banner
+chmod +x banner
+rm -rf badvpn 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/badvpn > badvpn
+chmod +x badvpn
 clear
 echo -e "\033[1;32mInstalacion Finalizada\n\033[1;30mEjecute:"
 echo -e "\n\033[1;32mvpspack \033[1;30mMenu de opciones"

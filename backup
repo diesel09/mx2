@@ -1,0 +1,14 @@
+#!/bin/bash
+echo -e "\033[1;33mBackup\033[1;30m
+1) Crear respaldo de usuarios
+2) Restaurar usuarios de un backup"
+read -p "opcion: " option
+if [ $option -eq 1 ]; then
+backup_de_usuarios
+exit 0
+fi
+
+if [ $option -eq 2 ]; then
+restaurar_usuarios
+exit
+fi

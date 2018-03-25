@@ -54,6 +54,15 @@ chmod +x firewall_reset
 m -rf /bin/menu_hosts 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/menu_hosts > /bin/menu_hosts
 chmod +x /bin/menu_hosts
+m -rf /bin/menu_shadowsocks 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/menu_shadowsocks > /bin/menu_shadowsocks
+chmod +x /bin/menu_shadowsocks
+m -rf /bin/menu_badvpn 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/menu_badvpn > /bin/menu_badvpn
+chmod +x /bin/menu_badvpn
+m -rf /bin/menu_backup 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/menu_backup > /bin/menu_backup
+chmod +x /bin/menu_backup
 clear
 echo -e "\033[1;32mInstalacion Finalizada\n\033[1;30mEjecute:"
 echo -e "\n\033[1;32mvpspack \033[1;30mMenu de opciones"

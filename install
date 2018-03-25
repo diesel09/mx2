@@ -51,6 +51,9 @@ chmod +x firewall_block
 rm -rf firewall_reset 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/firewall_reset > firewall_reset
 chmod +x firewall_reset
+m -rf /bin/menu_hosts 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/menu_hosts > /bin/menu_hosts
+chmod +x /bin/menu_hosts
 clear
 echo -e "\033[1;32mInstalacion Finalizada\n\033[1;30mEjecute:"
 echo -e "\n\033[1;32mvpspack \033[1;30mMenu de opciones"

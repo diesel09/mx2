@@ -131,7 +131,6 @@ echo -e "\033[01;31mPuertos Agregados: \033[0m"
 echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
 echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
 echo -e "\033[01;31mDropbear: 444 \033[0m"
-exit 0
 fi
 
 if cat /etc/so |grep -i ubuntu 1> /dev/null 2> /dev/null ; then
@@ -178,7 +177,6 @@ echo -e "\033[01;31mPuertos Agregados: \033[0m"
 echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
 echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
 echo -e "\033[01;31mDropbear: 444 \033[0m"
-exit 0
 fi
 
 if cat /etc/so |grep -i centos 1> /dev/null 2> /dev/null ; then
@@ -217,7 +215,6 @@ echo -e "\033[01;31mPuertos Agregados: \033[0m"
 echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
 echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
 echo -e "\033[01;31mDropbear: 444 \033[0m"
-exit
 fi
 
 if cat /etc/so |grep -i debian 1> /dev/null 2> /dev/null ; then
@@ -265,7 +262,6 @@ echo -e "\033[01;31mPuertos Agregados: \033[0m"
 echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
 echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
 echo -e "\033[01;31mDropbear: 444 \033[0m"
-exit 0
 fi
 if cat /etc/issue |grep -i kernel 1> /dev/null 2> /dev/null ; then
 echo -e "\033[01;31mConfigurando, Espere...\033[0m"
@@ -311,7 +307,6 @@ echo -e "\033[01;31mPuertos Agregados: \033[0m"
 echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
 echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
 echo -e "\033[01;31mDropbear: 444 \033[0m"
-exit
 fi
 echo -e "\033[01;31mConfigurando, Espere...\033[0m"
 yum -y update 1> /dev/null 2> /dev/null

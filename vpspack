@@ -37,10 +37,10 @@ fi
 echo -e "\033[1;31mPara que la instalacion sea correcta se necesita una ip.
 Digite su ip !\033[0m"
 read -p ": " ip
-sed -i "s/direccion/$ip/g" shadowsocks
+sed -i "s/direccion/$ip/g" /bin/shadowsocks
 echo Introduce tu Contraseña para shadowsocks:
 read pass
-sed -i "s/contra/$pass/g" shadowsocks
+sed -i "s/contra/$pass/g" /bin/shadowsocks
 clear
 echo -e "\033[1;31m-----> \033[01;37mScript VPSPACK - V2.1 AngelBanderas\033[0m"
 echo -e "\033[1;31m-----> \033[01;37mSistema:\033[1;31m $sistema"
@@ -131,7 +131,7 @@ echo -e "\033[01;31mPuertos Agregados: \033[0m"
 echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
 echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
 echo -e "\033[01;31mDropbear: 444 \033[0m"
-bash shadowsocks
+shadowsocks
 exit 0
 fi
 
@@ -179,7 +179,7 @@ echo -e "\033[01;31mPuertos Agregados: \033[0m"
 echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
 echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
 echo -e "\033[01;31mDropbear: 444 \033[0m"
-bash shadowsocks
+shadowsocks
 exit 0
 fi
 
@@ -219,7 +219,7 @@ echo -e "\033[01;31mPuertos Agregados: \033[0m"
 echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
 echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
 echo -e "\033[01;31mDropbear: 444 \033[0m"
-bash shadowsocks
+shadowsocks
 exit
 fi
 
@@ -268,7 +268,7 @@ echo -e "\033[01;31mPuertos Agregados: \033[0m"
 echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
 echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
 echo -e "\033[01;31mDropbear: 444 \033[0m"
-bash shadowsocks
+shadowsocks
 exit 0
 fi
 if cat /etc/issue |grep -i kernel 1> /dev/null 2> /dev/null ; then
@@ -315,7 +315,7 @@ echo -e "\033[01;31mPuertos Agregados: \033[0m"
 echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
 echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
 echo -e "\033[01;31mDropbear: 444 \033[0m"
-bash shadowsocks
+shadowsocks
 exit
 fi
 echo -e "\033[01;31mConfigurando, Espere...\033[0m"
@@ -364,7 +364,7 @@ echo -e "\033[01;31mPuertos Agregados: \033[0m"
 echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
 echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
 echo -e "\033[01;31mDropbear: 444 \033[0m"
-bash shadowsocks
+shadowsocks
 }
 function sistemadetalhes(){
 if [ -f /proc/cpuinfo ]
@@ -485,9 +485,6 @@ Despues de expirar, los usuarios seran desconectados."
 bash /etc/usuariosteste/$nome.sh &
 exit
 }
-function new_banner(){
-bash banner
-}
 function badvpn_install(){
 bash badvpn
 }
@@ -550,10 +547,6 @@ exit
 }
 function firewall(){
 bash menu_firewall
-}
-function dropbear(){
-cd ~/
-./dropbear
 }
 function detalhes_usuarios(){
 clear
@@ -654,35 +647,30 @@ if [[ $1 == "" ]]
 then
 echo -e "\033[1;37m       VpsPack V2 © MX (Angel Banderas) \033[0m"
 echo -e "\033[1;37mSeleccione una opcion:    Para Salir pulse Ctrl + C\033[0;32m
-[\033[1;30m01\033[0;32m] Configurar_Squid_SSH_Dropbear \033[1;30m(Configuracion Squid, OpenSSH, Dropbear, Shadowsocks y BadVpn)\033[0;32m
-[\033[1;30m02\033[0;32m] Limite \033[1;30m(Limite de conexoes simultaneas)\033[0;32m
+[\033[1;30m01\033[0;32m] Configurar_Squid_SSH_Dropbear \033[1;30m(Squid, OpenSSH, Dropbear, Shadowsocks y BadVpn)\033[0;32m
+[\033[1;30m02\033[0;32m] Limite \033[1;30m(Limite de conexioes simultaneas)\033[0;32m
 [\033[1;30m03\033[0;32m] Crear_Usuario \033[1;30m(Crear usuarios)\033[0;32m
 [\033[1;30m04\033[0;32m] Remover_expirados \033[1;30m(Remover usuarios expirados)\033[0;32m
 [\033[1;30m05\033[0;32m] Crear_Prueba \033[1;30m(Crear usuarios de corta duracion)\033[0;32m
-[\033[1;30m06\033[0;32m] BadVpn \033[1;30m(Instala badvpn para tunnel udp)\033[0;32m
-[\033[1;30m07\033[0;32m] BadVpn_Start \033[1;30m(Activar llamadas voip, juegos online, etc)\033[0;32m
-[\033[1;30m08\033[0;32m] BadVpn_Stop \033[1;30m(Parar servicio de badvpn)\033[0;32m
-[\033[1;30m09\033[0;32m] Remover_Limite \033[1;30m(Remover limite de conexiones de un usuario)\033[0;32m
-[\033[1;30m10\033[0;32m] Cambiar_Nombre \033[1;30m(Cambiar nombre de un usuario)\033[0;32m
-[\033[1;30m11\033[0;32m] Redefinir_Usuario \033[1;30m(Cambiar fecha, contraseña, etc)\033[0;32m
-[\033[1;30m12\033[0;32m] Eliminar_Usuario \033[1;30m(Menu Eliminar, Desconectar, etc)\033[0;32m
+[\033[1;30m06\033[0;32m] BadVpn \033[1;30m(Activar y desactivar BadVpn)\033[0;32m
+[\033[1;30m07\033[0;32m] Shadowsocks \033[1;30m(Activar y desactivar Shadowsocks)\033[0;32m
+[\033[1;30m08\033[0;32m] Remover_Limite \033[1;30m(Remover limite de conexiones de un usuario)\033[0;32m
+[\033[1;30m09\033[0;32m] Cambiar_Nombre \033[1;30m(Cambiar nombre de un usuario)\033[0;32m
+[\033[1;30m10\033[0;32m] Redefinir_Usuario \033[1;30m(Cambiar fecha, contraseña, etc)\033[0;32m
+[\033[1;30m11\033[0;32m] Eliminar_Usuario \033[1;30m(Menu Eliminar, Desconectar, etc)\033[0;32m
+[\033[1;30m12\033[0;32m] Hosts \033[1;30m(Agregar y eliminar Hosts )\033[0;32m
 [\033[1;30m13\033[0;32m] Firewall \033[1;30m(Bloquear torrent, restablecer [\033[1;31mRIESGO\033[1;30m])\033[0;32m
-[\033[1;30m15\033[0;32m] Hosts \033[1;30m(Agregar y eliminar Hosts )\033[0;32m
-[\033[1;30m17\033[0;32m] Monitoriar \033[1;30m(Monitoriar conexiones)\033[0m\033[0;32m
-[\033[1;30m18\033[0;32m] Backup-Users \033[1;30m(Respaldo de usuarios)\033[0;32m
-[\033[1;30m19\033[0;32m] Rest-Users \033[1;30m(Restaurar usuarios de un backup)\033[0;32m
-[\033[1;30m20\033[0;32m] Usuarios_Detalles \033[1;30m(Informacion sobre los usuarios !!)\033[0;32m
-[\033[1;30m21\033[0;32m] Banner \033[1;30m(Agregar un banner)\033[0;32m
-[\033[1;30m22\033[0;32m] Speedtest \033[1;30m(Prueba de conexion [velocidad de banda])\033[0;32m
-[\033[1;30m23\033[0;32m] Sistema_Detalles \033[1;30m(Detalles sobre el Sistema)\033[0;32m
-[\033[1;30m24\033[0;32m] Eliminar_Todos \033[1;30m(Todos los usuarios seran eliminados)\033[0;32m
-[\033[1;30m25\033[0;32m] Desinstalar \033[1;30m(Remover VpsPack)\033[0;32m
-[\033[1;30m26\033[0;32m] Dropbear \033[1;30m(Ver usuarios conectados en Dropbear)\033[0;32m
-[\033[1;30m27\033[0;32m] Shadowshocks_Install \033[1;30m(Instalar Shadowsocks)\033[0;32m
-[\033[1;30m28\033[0;32m] Shadowshocks_Start \033[1;30m(Activar Shadowsocks)\033[0;32m
-[\033[1;30m29\033[0;32m] Shadowshocks_stop \033[1;30m(Parar Shadowsocks)\033[0;32m
-[\033[1;30m30\033[0;32m] Ver_Puertos \033[1;30m(Ver puertos abiertos)\033[0;32m
-[\033[1;30m31\033[0;32m] New_Banner \033[1;30m(Banner preconfigurado)\033[0;32m"
+[\033[1;30m14\033[0;32m] Backup \033[1;30m(Respaldo y restauracion de usuarios)\033[0;32m
+[\033[1;30m15\033[0;32m] Monitoriar \033[1;30m(Monitoriar conexiones)\033[0m\033[0;32m
+[\033[1;30m16\033[0;32m] Usuarios_Detalles \033[1;30m(Informacion sobre los usuarios !!)\033[0;32m
+[\033[1;30m17\033[0;32m] Banner \033[1;30m(Agregar un banner)\033[0;32m
+[\033[1;30m18\033[0;32m] Speedtest \033[1;30m(Prueba de conexion [velocidad de banda])\033[0;32m
+[\033[1;30m19\033[0;32m] Sistema_Detalles \033[1;30m(Detalles sobre el Sistema)\033[0;32m
+[\033[1;30m20\033[0;32m] Dropbear \033[1;30m(Ver usuarios conectados en Dropbear)\033[0;32m
+[\033[1;30m21\033[0;32m] Eliminar_Todos \033[1;30m(Todos los usuarios seran eliminados)\033[0;32m
+[\033[1;30m22\033[0;32m] Ver_Puertos \033[1;30m(Ver puertos abiertos)\033[0;32m
+[\033[1;30m23\033[0;32m] New_Banner \033[1;30m(Banner preconfigurado)\033[0;32m
+[\033[1;30m1000\033[0;32m] Desinstalar \033[1;30m(Remover VpsPack)\033[0;32m"
 
 read -p ": " opcao
 else

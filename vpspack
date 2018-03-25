@@ -476,10 +476,10 @@ bash /etc/usuariosteste/$nome.sh &
 exit
 }
 function new_banner(){
-wget https://raw.githubusercontent.com/angelbanderasl/VpsConf/master/banner.sh && bash banner.sh && rm -r banner.sh
+bash banner
 }
 function badvpn_install(){
-wget https://raw.githubusercontent.com/angelbanderasl/VpsConf/master/badvpn.sh && bash badvpn.sh
+bash badvpn
 }
 function shadowsocks_install(){
 bash shadow

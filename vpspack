@@ -658,7 +658,7 @@ if [[ $1 == "" ]]
 then
 echo -e "\033[1;37m       VpsPack V2 © MX (Angel Banderas) \033[0m"
 echo -e "\033[1;37mSeleccione una opcion:    Para Salir pulse Ctrl + C\033[0;32m
-[\033[1;30m01\033[0;32m] Configurar_Squid_SSH_Dropbear \033[1;30m(Configuracion Squid, OpenSSH y Dropbear)\033[0;32m
+[\033[1;30m01\033[0;32m] Configurar_Squid_SSH_Dropbear \033[1;30m(Configuracion Squid, OpenSSH, Dropbear, Shadowsocks y BadVpn)\033[0;32m
 [\033[1;30m02\033[0;32m] Limite \033[1;30m(Limite de conexoes simultaneas)\033[0;32m
 [\033[1;30m03\033[0;32m] Crear_Usuario \033[1;30m(Crear usuarios)\033[0;32m
 [\033[1;30m04\033[0;32m] Remover_expirados \033[1;30m(Remover usuarios expirados)\033[0;32m
@@ -694,9 +694,9 @@ opcao=$1
 fi
 case $opcao in
   1 | 01 )
-   shadowsocks_install
    badvpn_install
-   configurarsquid;;
+   configurarsquid
+   shadowsocks_install;;
   2 | 02 )
    read -p "Usuario: " user
    read -p "Limite: " limite

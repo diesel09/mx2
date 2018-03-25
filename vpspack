@@ -756,4 +756,5 @@ case $opcao in
    netstat -tunlp;;
    31)
    new_banner;;
+   netstat -tunlp;;
 esac

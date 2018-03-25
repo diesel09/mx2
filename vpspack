@@ -719,7 +719,7 @@ case $opcao in
   19)
   sistemadetalhes;;
   20)
-   dropbear;;
+   dropbeart;;
   21)
   deletar_todos;;
   22)

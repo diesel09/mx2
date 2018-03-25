@@ -725,7 +725,7 @@ case $opcao in
   22)
    netstat -tunlp;;
   23)
-   new_banner;;
+   banner;;
   1000)
    rm -rf /bin/speedtest.py 2>/dev/null
    rm -rf /bin/deletarusuario 2>/dev/null

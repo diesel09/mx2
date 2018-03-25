@@ -720,7 +720,7 @@ echo -e "\033[1;37mSeleccione una opcion:    Para Salir pulse Ctrl + C\033[0;32m
 [\033[1;30m22\033[0;32m] Speedtest \033[1;30m(Prueba de conexion [velocidad de banda])\033[0;32m
 [\033[1;30m23\033[0;32m] Sistema_Detalles \033[1;30m(Detalles sobre el Sistema)\033[0;32m
 [\033[1;30m24\033[0;32m] Eliminar_Todos \033[1;30m(Todos los usuarios seran eliminados)\033[0;32m
-[\033[1;30m25\033[0;32m] Desinstalar \033[1;30m(Remover VpsPack)\033[0m
+[\033[1;30m25\033[0;32m] Desinstalar \033[1;30m(Remover VpsPack)\033[0;32m
 [\033[1;30m26\033[0;32m] Dropbear \033[1;30m(Ver usuarios conectados en Dropbear)\033[0;32m
 [\033[1;30m27\033[0;32m] Shadowshocks_Install \033[1;30m(Instalar Shadowsocks)\033[0;32m
 [\033[1;30m28\033[0;32m] Shadowshocks_Start \033[1;30m(Activar Shadowsocks)\033[0;32m

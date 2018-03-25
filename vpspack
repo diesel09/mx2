@@ -541,61 +541,12 @@ usermod -l $nome $user 1>/dev/null 2>/dev/null
 echo -e "\nUsuario: $user, Nuevo nombre: $nome."
 exit
 }
-function firewallblock(){
-read -p "Escriba la direccion ip de su vps: " ip
-echo Configurando...
-sleep 1
-iptables -P INPUT DROP
-iptables -P OUTPUT DROP
-iptables -P FORWARD DROP
-iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
-iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
-iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
-iptables -t filter -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
-iptables -A OUTPUT -p tcp -d $ip --dport 443 -m state --state NEW -j ACCEPT
-iptables -A OUTPUT -p tcp -d $ip --dport 80 -m state --state NEW -j ACCEPT
-iptables -A OUTPUT -p tcp --dport 53 -m state --state NEW -j ACCEPT
-iptables -A OUTPUT -p udp --dport 53 -m state --state NEW -j ACCEPT
-iptables -A OUTPUT -p tcp --dport 67 -m state --state NEW -j ACCEPT
-iptables -A OUTPUT -p udp --dport 67 -m state --state NEW -j ACCEPT
-iptables -A INPUT -p tcp --dport 22 -j ACCEPT
-iptables -A INPUT -p tcp --dport 443 -j ACCEPT
-iptables -A OUTPUT -p tcp --dport 22 -j ACCEPT
-iptables -A OUTPUT -p tcp --dport 443 -j ACCEPT
-iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
-iptables -A INPUT -p tcp --dport 80 -j ACCEPT
-iptables -A INPUT -p tcp --dport 3128 -j ACCEPT
-iptables -A INPUT -p tcp --dport 8799 -j ACCEPT
-iptables -A OUTPUT -p tcp --dport 8080 -j ACCEPT
-iptables -A OUTPUT -p tcp --dport 80 -j ACCEPT
-iptables -A OUTPUT -p tcp --dport 3128 -j ACCEPT
-iptables -A OUTPUT -p tcp --dport 8799 -j ACCEPT
-iptables -A FORWARD -p tcp --dport 8080 -j ACCEPT
-iptables -A FORWARD -p tcp --dport 80 -j ACCEPT
-iptables -A FORWARD -p tcp --dport 3128 -j ACCEPT
-iptables -A FORWARD -p tcp --dport 8799 -j ACCEPT
-iptables -A INPUT -p icmp --icmp-type echo-request -j DROP
-iptables -A INPUT -p tcp --dport 10000 -j ACCEPT
-iptables -A OUTPUT -p tcp --dport 10000 -j ACCEPT
-echo -e "\033[1;37mFirewall modificado
-Puertos 443 22 8799 8080 80 3128
-Bloqueado ICMP
-Bloqueado Torrent\033[0m"
+function firewall(){
+bash menu_firewall
 }
 function dropbear(){
 cd ~/
 ./dropbear
-}
-function resetfirewall(){
-iptables -F
-iptables -X
-iptables -t mangle -F
-iptables -t mangle -X
-iptables -t nat -F
-iptables -t nat -X
-iptables -t filter -F
-iptables -t filter -X
-echo "Reglas restablecidas"
 }
 function detalhes_usuarios(){
 clear
@@ -708,8 +659,7 @@ echo -e "\033[1;37mSeleccione una opcion:    Para Salir pulse Ctrl + C\033[0;32m
 [\033[1;30m10\033[0;32m] Cambiar_Nombre \033[1;30m(Cambiar nombre de un usuario)\033[0;32m
 [\033[1;30m11\033[0;32m] Redefinir_Usuario \033[1;30m(Cambiar fecha, contraseña, etc)\033[0;32m
 [\033[1;30m12\033[0;32m] Eliminar_Usuario \033[1;30m(Menu Eliminar, Desconectar, etc)\033[0;32m
-[\033[1;30m13\033[0;32m] Firewall-block \033[1;30m(Bloquear torrent, icmp [\033[1;31mRIESGO\033[1;30m])\033[0;32m
-[\033[1;30m14\033[0;32m] Reset_Firewall \033[1;30m(Resetear reglas iptables [\033[1;31mRIESGO\033[1;30m])\033[0;32m
+[\033[1;30m13\033[0;32m] Firewall \033[1;30m(Bloquear torrent, restablecer [\033[1;31mRIESGO\033[1;30m])\033[0;32m
 [\033[1;30m15\033[0;32m] Addhost \033[1;30m(Agregar Hosts )\033[0;32m
 [\033[1;30m16\033[0;32m] Remover_Host \033[1;30m(Remover Hosts)\033[0;32m
 [\033[1;30m17\033[0;32m] Monitoriar \033[1;30m(Monitoriar conexiones)\033[0m\033[0;32m
@@ -760,9 +710,9 @@ case $opcao in
   12)
    deletarusuario;;
   13)
-   firewallblock;;
+   firewall;;
   14)
-   resetfirewall;;
+   new_banner;;
   15)
    addhost;;
   16)

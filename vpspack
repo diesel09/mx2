@@ -48,6 +48,8 @@ echo -e "\033[1;31m-----> \033[01;37mSu ip agregada:\033[1;31m $ip"
 echo -e "\033[1;31m-----> \033[1;37mSQUID:\033[1;31m 80, 8080, 8799, 3128\033[0m"
 echo -e "\033[1;31m-----> \033[1;37mPuertos SSH: \033[1;31m443, 22\033[0m"
 echo -e "\033[1;31m-----> \033[1;37mDropbear Puertos: \033[1;31m444\033[0m"
+echo -e "\033[1;31m-----> \033[1;37mShadowsock Puerto: \033[1;31m447\033[0m"
+echo -e "\033[1;31m-----> \033[1;37mBadVpn Puerto: \033[1;31m7300\033[0m"
 echo -e "\033[1;31m-----> \033[1;37mIPS/Hosts SSH: \033[1;31m$ip, localhost, 127.0.0.1\033[0m"
 echo -e "\033[1;31m-----> \033[1;37mHerramienta para agregar Hosts:\033[1;31m addhost\033[0m"
 
@@ -131,6 +133,7 @@ echo -e "\033[01;31mPuertos Agregados: \033[0m"
 echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
 echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
 echo -e "\033[01;31mDropbear: 444 \033[0m"
+badvpn_install
 shadowsocks
 exit 0
 fi
@@ -179,6 +182,7 @@ echo -e "\033[01;31mPuertos Agregados: \033[0m"
 echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
 echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
 echo -e "\033[01;31mDropbear: 444 \033[0m"
+badvpn_install
 shadowsocks
 exit 0
 fi
@@ -219,6 +223,7 @@ echo -e "\033[01;31mPuertos Agregados: \033[0m"
 echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
 echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
 echo -e "\033[01;31mDropbear: 444 \033[0m"
+badvpn_install
 shadowsocks
 exit
 fi
@@ -268,6 +273,7 @@ echo -e "\033[01;31mPuertos Agregados: \033[0m"
 echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
 echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
 echo -e "\033[01;31mDropbear: 444 \033[0m"
+badvpn_install
 shadowsocks
 exit 0
 fi
@@ -315,6 +321,7 @@ echo -e "\033[01;31mPuertos Agregados: \033[0m"
 echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
 echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
 echo -e "\033[01;31mDropbear: 444 \033[0m"
+badvpn_install
 shadowsocks
 exit
 fi
@@ -364,6 +371,7 @@ echo -e "\033[01;31mPuertos Agregados: \033[0m"
 echo -e "\033[01;31mOpenSSH: 22/443 \033[0m"
 echo -e "\033[01;31mSquid: 80/8080/8799/3128 \033[0m"
 echo -e "\033[01;31mDropbear: 444 \033[0m"
+badvpn_install
 shadowsocks
 }
 function sistemadetalhes(){
@@ -679,7 +687,6 @@ opcao=$1
 fi
 case $opcao in
   1 | 01 )
-   badvpn_install
    configurarsquid;;
   2 | 02 )
    read -p "Usuario: " user

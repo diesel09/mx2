@@ -1,3 +1,3 @@
 
 # Install
-wget https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/install && bash install
+wget https://raw.githubusercontent.com/diesel09/mx2/master/install && bash install

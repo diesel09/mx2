@@ -5,11 +5,11 @@ echo -e "\033[1;33mFirewall\033[1;30m
 2) Firewall Reset"
 read -p "opcion: " option
 if [ $option -eq 1 ]; then
-bash firewall_block
+firewall_block
 exit 0
 fi
 
 if [ $option -eq 2 ]; then
-bash firewall_reset
+firewall_reset
 exit
 fi

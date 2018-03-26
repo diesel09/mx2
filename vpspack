@@ -670,6 +670,7 @@ echo -e "\033[1;37mSeleccione una opcion:    Para Salir pulse Ctrl + C\033[0;32m
 [\033[1;30m21\033[0;32m] Eliminar_Todos \033[1;30m(Todos los usuarios seran eliminados)\033[0;32m
 [\033[1;30m22\033[0;32m] Ver_Puertos \033[1;30m(Ver puertos abiertos)\033[0;32m
 [\033[1;30m23\033[0;32m] New_Banner \033[1;30m(Banner preconfigurado)\033[0;32m
+[\033[1;30m24\033[0;32m] Webmin \033[1;30m(Instalar Webmin)\033[0;32m
 [\033[1;30m1000\033[0;32m] Desinstalar \033[1;30m(Remover VpsPack)\033[0;32m"
 
 read -p ": " opcao
@@ -726,6 +727,8 @@ case $opcao in
    netstat -tunlp;;
   23)
    banner;;
+   24)
+   webmin;;
   1000)
    rm -rf /bin/speedtest.py 2>/dev/null
    rm -rf /bin/deletarusuario 2>/dev/null

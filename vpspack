@@ -553,9 +553,6 @@ usermod -l $nome $user 1>/dev/null 2>/dev/null
 echo -e "\nUsuario: $user, Nuevo nombre: $nome."
 exit
 }
-function firewall(){
-bash menu_firewall
-}
 function detalhes_usuarios(){
 clear
 
@@ -713,7 +710,7 @@ case $opcao in
   12)
    menu_hosts;;
   13)
-   firewall;;
+   menu_firewall;;
   14)
    menu_backup;;
   15)

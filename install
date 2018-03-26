@@ -60,6 +60,9 @@ chmod +x /bin/menu_badvpn
 m -rf /bin/menu_backup 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/menu_backup > /bin/menu_backup
 chmod +x /bin/menu_backup
+rm -rf /bin/webmin 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/webmin > /bin/webmin
+chmod +x /bin/webmin
 clear
 echo -e "\033[1;32mInstalacion Finalizada\n\033[1;30mEjecute:"
 echo -e "\n\033[1;32mvpspack \033[1;30mMenu de opciones"

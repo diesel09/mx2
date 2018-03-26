@@ -42,12 +42,6 @@ chmod +x badvpn
 rm -rf menu_firewall 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/menu_firewall > menu_firewall
 chmod +x menu_firewall
-rm -rf firewall_block 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/firewall_block > firewall_block
-chmod +x firewall_block
-rm -rf firewall_reset 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/firewall_reset > firewall_reset
-chmod +x firewall_reset
 m -rf /bin/menu_hosts 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/menu_hosts > /bin/menu_hosts
 chmod +x /bin/menu_hosts

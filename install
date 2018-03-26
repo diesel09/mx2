@@ -39,9 +39,9 @@ chmod +x /bin/banner
 rm -rf badvpn 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/badvpn > badvpn
 chmod +x badvpn
-rm -rf menu_firewall 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/menu_firewall > menu_firewall
-chmod +x menu_firewall
+rm -rf /bin/menu_firewall 2>/dev/null
+wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/menu_firewall > /bin/menu_firewall
+chmod +x /bin/menu_firewall
 m -rf /bin/menu_hosts 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/menu_hosts > /bin/menu_hosts
 chmod +x /bin/menu_hosts

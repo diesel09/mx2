@@ -1,8 +1,4 @@
 #!/bin/bash
-echo -e "\033[1;33mHosts\033[1;30m
-1) Añadir hosts
-2) Eliminar hosts"
-read -p "opcion: " option
 function addihost(){ echo '#!/bin/bash
 echo -e "\033[1;31mHosts atualmente permitidos\n\n\033[1;32m$(cat /etc/payloads)\n\033[0m"
 echo "¿Que host desea agregar?"
@@ -24,11 +20,15 @@ squid3 -k reconfigure >/dev/null 2>/dev/null
 echo -e "\n\033[1;32mHost Eliminado\033[0m"
 ' > /bin/removerhost
 }
+
+echo -e "\033[1;33mHosts\033[1;30m
+1) Añadir hosts
+2) Eliminar hosts"
+read -p "opcion: " option
 if [ $option -eq 1 ]; then
 addhost
 exit 0
 fi
-
 if [ $option -eq 2 ]; then
 removerhost
 exit

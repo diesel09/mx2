@@ -58,7 +58,7 @@ rm -rf /bin/webmin 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/webmin > /bin/webmin
 chmod +x /bin/webmin
 clear
-echo "alias @actualiza='wget https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/install && bash install'" >> .bashrc
+echo "alias @actualiza='wget https://github.com/diesel09/mx2/blob/master/install && bash install'" >> .bashrc
 echo -e "\033[1;32mInstalacion Finalizada\n\033[1;30mEjecute:"
 echo -e "\n\033[1;32mvpspack \033[1;30mMenu de opciones"
 echo -e "\033[1;32mOpcion 3 \033[1;30mCrear un usuario con fecha y limite"

@@ -59,9 +59,9 @@ wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/m
 chmod +x /bin/webmin
 clear
 echo "alias @actualiza='wget https://github.com/diesel09/mx2/blob/master/install && bash install'" >> .bashrc
-echo -e "\033[1;32mInstalacion Finalizada\n\033[1;30mEjecute:"
-echo -e "\n\033[1;32mvpspack \033[1;30mMenu de opciones"
-echo -e "\033[1;32mOpcion 3 \033[1;30mCrear un usuario con fecha y limite"
-echo -e "\033[1;32mModificada por: \033[1;30mAngel Banderas"
-echo -e "\033[1;32mInstalada \033[1;30mVersion 2.3\033[0m"
+echo -e "\033[1;32mInstalacion Finalizada\n\033[1;37mEjecute:"
+echo -e "\n\033[1;32mvpspack \033[1;37mMenu de opciones"
+echo -e "\033[1;32mOpcion 3 \033[1;37mCrear un usuario con fecha y limite"
+echo -e "\033[1;32mModificada por: \033[1;37mFelipe Couoh : Piratas Informaticos MX"
+echo -e "\033[1;32mInstalada \033[1;37mVersion 2.3\033[0m"
 rm -rf install

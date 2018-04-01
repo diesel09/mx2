@@ -30,7 +30,7 @@ chmod +x /bin/speedtest.py
 wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/toolmaster > /bin/toolmaster
 chmod +x /bin/toolmaster
 rm -rf /bin/dropbeart 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/dropbear > /bin/dropbeart
+wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/dropbear > /bin/dropbeart
 chmod +x /bin/dropbeart
 rm -rf /bin/shadowsocks 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/shadowsocks > /bin/shadowsocks

@@ -10,52 +10,52 @@ mkdir /etc/VpsPackdir 2>/dev/null
 mkdir /etc/VpsPackdir/limite 2>/dev/null
 mkdir /etc/VpsPackdir/senha 2>/dev/null
 rm -rf /bin/limite 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/limite > /bin/limite
+wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/limite > /bin/limite
 chmod +x /bin/limite
 rm -rf /bin/criarusuario 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/criarusuario > /bin/criarusuario
+wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/criarusuario > /bin/criarusuario
 chmod +x /bin/criarusuario
 rm -rf /bin/deletarusuario 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/deletarusuario > /bin/deletarusuario
+wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/deletarusuario > /bin/deletarusuario
 chmod +x /bin/deletarusuario
 rm -rf /bin/redefinirusuario 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/redefinirusuario > /bin/redefinirusuario
+wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/redefinirusuario > /bin/redefinirusuario
 chmod +x /bin/redefinirusuario
 rm -rf /bin/vpspack 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx/master/vpspack > /bin/vpspack
 chmod +x /bin/vpspack
 rm -rf /bin/speedtest.py 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/speedtest.py > /bin/speedtest.py
+wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/speedtest.py > /bin/speedtest.py
 chmod +x /bin/speedtest.py
 rm -rf /bin/dropbeart 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/dropbear > /bin/dropbeart
 chmod +x /bin/dropbeart
 rm -rf /bin/shadowsocks 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/shadowsocks > /bin/shadowsocks
+wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/shadowsocks > /bin/shadowsocks
 chmod +x /bin/shadowsocks
 rm -rf /bin/banner 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/banner > /bin/banner
 chmod +x /bin/banner
 rm -rf badvpn 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/badvpn > badvpn
+wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/badvpn > badvpn
 chmod +x badvpn
 rm -rf /bin/menu_firewall 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/menu_firewall > /bin/menu_firewall
+wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/menu_firewall > /bin/menu_firewall
 chmod +x /bin/menu_firewall
 m -rf /bin/menu_hosts 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/menu_hosts > /bin/menu_hosts
+wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/menu_hosts > /bin/menu_hosts
 chmod +x /bin/menu_hosts
 m -rf /bin/menu_shadowsocks 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/menu_shadowsocks > /bin/menu_shadowsocks
+wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/menu_shadowsocks > /bin/menu_shadowsocks
 chmod +x /bin/menu_shadowsocks
 m -rf /bin/menu_badvpn 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/menu_badvpn > /bin/menu_badvpn
+wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/menu_badvpn > /bin/menu_badvpn
 chmod +x /bin/menu_badvpn
 m -rf /bin/menu_backup 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/menu_backup > /bin/menu_backup
+wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/menu_backup > /bin/menu_backup
 chmod +x /bin/menu_backup
 rm -rf /bin/webmin 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/angelbanderasl/VpsPack/master/webmin > /bin/webmin
+wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/webmin > /bin/webmin
 chmod +x /bin/webmin
 clear
 echo "alias @actualiza='wget https://github.com/diesel09/mx2/blob/master/install && bash install'" >> .bashrc

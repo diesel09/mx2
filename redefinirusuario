@@ -9,8 +9,8 @@ read -p "Nombre del usuario: " namer
  exit
  fi
 clear
-echo -e "\033[1;33mOpciones a modificar ?\033[1;30m
-echo -e "\033[1;37m1) Numero de logins\033[1;30m
+echo -e "\033[1;33mSeleccione una Opcion\033[1;30m
+echo -e "\033[1;37m1) Numero de Conexiones\033[1;30m
 echo -e "\033[1;37m2) Fecha de expiracion\033[1;30m
 echo -e "\033[1;37m3) Cambiar contraseña del usuario"\033[1;30m
 read -p "opcion: " option

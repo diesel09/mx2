@@ -10,9 +10,9 @@ read -p "Nombre del usuario: " namer
  fi
 clear
 echo -e "\033[1;33mOpciones a modificar ?\033[1;30m
-1) Numero de logins
-2) Fecha de expiracion
-3) Cambiar contraseña del usuario"
+echo -e "\033[1;37m1) Numero de logins\033[1;30m
+echo -e "\033[1;37m2) Fecha de expiracion\033[1;30m
+echo -e "\033[1;37m3) Cambiar contraseña del usuario"\033[1;30m
 read -p "opcion: " option
 if [ $option -eq 1 ]; then
 read -p "Cual es el nuevo limite de logins: " liml

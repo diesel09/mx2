@@ -62,6 +62,6 @@ echo "alias @actualiza='wget https://github.com/diesel09/mx2/blob/master/install
 echo -e "\033[1;32mInstalacion Finalizada\n\033[1;37mEjecute:"
 echo -e "\n\033[1;32mvpspack \033[1;37mMenu de opciones"
 echo -e "\033[1;32mOpcion 3 \033[1;37mCrear un usuario con fecha y limite"
-echo -e "\033[1;32mModificada por: \033[1;37mFelipe Couoh : Piratas Informaticos MX"
+echo -e "\033[1;32mModificada por: \033[1;37mFelipe Couoh : NetFree Mx
 echo -e "\033[1;32mInstalada \033[1;37mVersion 2.3\033[0m"
 rm -rf install

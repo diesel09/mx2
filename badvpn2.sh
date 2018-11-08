@@ -4,27 +4,27 @@ if [ -f "/usr/local/bin/badvpn-udpgw" ]
 then
 	tput setaf 3 ; tput bold ; echo ""
 	echo ""
-	echo "O BadVPN já foi instalado com sucesso."
-	echo "Para executar, crie uma sessão screen"
-	echo "E execute o comando:"
+	echo "El BadVPN ha sido instalado con éxito."
+	echo "Para ejecutar, crear una sesión de pantalla."
+	echo ""Y ejecute el comando:"
 	echo ""
 	echo "badudp"
 	echo ""
-	echo "E deixe a sessão screen rodando em segundo plano."
+	echo "Y deje la sesión de la pantalla que se ejecuta en segundo plano."
 	echo "" ; tput sgr0
 	exit
 else
 tput setaf 2 ; tput bold ; echo ""
-echo "Este é um script que compila e instala automaticamente o programa"
-echo "BadVPN em servidores Debian e Ubuntu para ativar o encaminhamento UDP"
-echo "na porta 7300, usado por programas como HTTP Injector da Evozi."
-echo "Permitindo assim a utilização do protocolo UDP para jogos online,"
-echo "chamadas VoIP e outras coisas interessantes."
+echo "Este es un script que se compila e instala automaticamente el programa"
+echo "BadVPN para servidores Debian y Ubuntu para activar el funcionamiento UDP"
+echo "Puerto utilizado: 7300, usado por programas como HTTP Injector."
+echo "Permite utilizar el protocolo UDP para juegos online,"
+echo "Llamadas VoIP entre otras."
 echo "" ; tput sgr0
-read -p "Deseja continuar? [s/n]: " -e -i n resposta
+read -p "Deseja continuar? [s/n]: " -e -i s resposta
 if [[ "$resposta" = 's' ]]; then
 	echo ""
-	echo "A instalação pode demorar bastante... seja paciente!"
+	echo "La instalacion puede demorar bastante, sea paciente!"
 	sleep 3
 	apt-get update -y
 	apt-get install screen wget gcc build-essential g++ make -y
@@ -53,13 +53,13 @@ if [[ "$resposta" = 's' ]]; then
 	clear
 	tput setaf 3 ; tput bold ; echo ""
 	echo ""
-	echo "BadVPN instalado com sucesso."
-	echo "Para usar, crie uma sessão screen"
-	echo "E execute o comando:"
+	echo "BadVPN instalado con exito."
+	echo "Para usar, cree una sesion"
+	echo "Y execute (es posible que tenga que ejecutar el comando 2 veces para la activacion), el comando:"
 	echo ""
 	echo "badudp"
 	echo ""
-	echo "E deixe a sessão screen rodando em segundo plano."
+	echo "Deje la sesion fucionando en segundo plano."
 	echo "" ; tput sgr0
 	exit
 else 

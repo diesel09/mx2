@@ -21,7 +21,7 @@ echo "Puerto utilizado: 7300, usado por programas como HTTP Injector."
 echo "Permite utilizar el protocolo UDP para juegos online,"
 echo "Llamadas VoIP entre otras."
 echo "" ; tput sgr0
-read -p "Deseja continuar? [s/n]: " -e -i s resposta
+read -p "Deseja continuar? [s/n]: " -e -i n resposta
 if [[ "$resposta" = 's' ]]; then
 	echo ""
 	echo "La instalacion puede demorar bastante, sea paciente!"

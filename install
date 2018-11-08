@@ -57,7 +57,7 @@ chmod +x /bin/menu_backup
 rm -rf /bin/webmin 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/webmin > /bin/webmin
 chmod +x /bin/webmin
-wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/ssltunnel > bin/stunnel
+wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/stunnel > bin/stunnel
 chmod +x /bin/stunnel
 clear
 echo "alias @actualiza='wget https://raw.githubusercontent.com/diesel09/mx2/master/install && bash install'" >> .bashrc

@@ -6,7 +6,7 @@ then
 	echo ""
 	echo "El BadVPN ha sido instalado con éxito."
 	echo "Para ejecutar, crear una sesión de pantalla."
-	echo ""Y ejecute el comando:"
+	echo "Y ejecute el comando:"
 	echo ""
 	echo "badudp"
 	echo ""

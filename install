@@ -37,8 +37,8 @@ rm -rf /bin/banner 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/banner > /bin/banner
 chmod +x /bin/banner
 rm -rf badvpn 2>/dev/null
-wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/badvpn > badvpn
-chmod +x badvpn
+wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/badvpn2 > /bin/badvpn
+chmod +x badvpn2
 rm -rf /bin/menu_firewall 2>/dev/null
 wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/menu_firewall > /bin/menu_firewall
 chmod +x /bin/menu_firewall

@@ -59,6 +59,8 @@ wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/webm
 chmod +x /bin/webmin
 wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/ssl/master/install > /bin/stunnel
 chmod +x /bin/stunnel
+wget -o /dev/null -O- https://raw.githubusercontent.com/diesel09/mx2/master/toolmaster > /bin/toolmaster
+chmod +x /bin/toolmaster
 clear
 echo "alias @actualiza='wget https://raw.githubusercontent.com/diesel09/mx2/master/install && bash install'" >> .bashrc
 echo -e "\033[1;32mInstalacion Finalizada\n\033[1;37mEjecute:"

@@ -17,7 +17,7 @@ def slowprint(s):
         time.sleep(4. / 100)
 banner = '''
                                                                                        
-========= ToolMaster =======\033[91m
+========= Host Finder =======\033[91m
 ========== NetFree Mx=========\033[92m
 =======https://tekaxenlinea.blogspot.com====\033[96m
 '''
@@ -48,7 +48,7 @@ def menu():
 
 \033[91m 0 \033[92m)\033[96m Salir
 '''
-slowprint("\033[1;91mNetFree Mx" + "\n - toolmaster")
+slowprint("\033[1;91mNetFree Mx" + "\n - Host Finder")
 
 menu()
 def ext():
@@ -126,7 +126,7 @@ def  select():
       print (finder)
       ext()
     elif joker == 11:
-      slowprint("ToolMaster \033[92m")
+      slowprint("Host Finder \033[92m")
       slowprint(".....................")
       slowprint("NetFree Mx \033[96m")
       slowprint(".........................")

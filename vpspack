@@ -81,10 +81,8 @@ squid3 -k reconfigure >/dev/null 2>/dev/null
 echo -e "\n\033[1;32mHost Eliminado\033[0m"
 ' > /bin/removerhost
 }
-function payloads(){ echo ".claro.com.br
-.claro.com.sv
-.vivo.com.br
-.ddivulga.com" > /etc/payloads
+function payloads(){ echo ".aprende.org
+.empleabilidad.xkan.com.mx "> /etc/payloads
 }
 
 if cat /etc/so |grep -i ubuntu |grep 16 1> /dev/null 2> /dev/null ; then

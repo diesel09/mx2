@@ -40,11 +40,11 @@ echo "
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-  <title>Monitor de Servicios VPS-MX</title>
+  <title>Monitor de Puertos</title>
   <link rel='stylesheet' href='estilos.css'>
 </head>
 <body>
-<h1>Monitor de Servicios By @Kalix1</h1>
+<h1>Monitor de Puertos</h1>
 <p id='ultact'>Última actualización: $FECHA</p>
 <hr>
 " > $DIR/$ARCHIVO
@@ -70,7 +70,7 @@ echo "<p>Estado del servicio badvpn está ||  $badvpn </span>.</p> " >> $DIR/$AR
 #SERVICE BADVPN
 PIDVRF3="$(ps aux|grep badvpn |grep -v grep|awk '{print $2}')"
 if [[ -z $PIDVRF3 ]]; then
-screen -dmS badvpn2 /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10
+screen -dmS badvpn /bin/badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 1000 --max-connections-for-client 10
 NOM=`less /etc/newadm/ger-user/nombre.log` > /dev/null 2>&1
 NOM1=`echo $NOM` > /dev/null 2>&1
 IDB=`less /etc/newadm/ger-user/IDT.log` > /dev/null 2>&1
@@ -85,6 +85,35 @@ for pid in $(echo $PIDVRF3); do
 echo""
 done
 fi
+
+#SERVICE PYTHON DIRECt COLOR
+ureset_python () {
+for port in $(cat /etc/newadm/PortPD.log| grep -v "nobody" |cut -d' ' -f1)
+do
+PIDVRF3="$(ps aux|grep pydic-"$port" |grep -v grep|awk '{print $2}')"
+if [[ -z $PIDVRF3 ]]; then
+screen -dmS pydic-"$port" python /etc/newadm/proxy.py "$port"
+NOM=`less /etc/newadm/ger-user/nombre.log` > /dev/null 2>&1
+NOM1=`echo $NOM` > /dev/null 2>&1
+IDB=`less /etc/newadm/ger-user/IDT.log` > /dev/null 2>&1
+IDB1=`echo $IDB` > /dev/null 2>&1
+KEY="862633455:AAGJ9BBJanzV6yYwLSemNAZAVwn7EyjrtcY"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
+MSG="⚠️ AVISO DE VPS: $NOM1 ⚠️
+❗️ Reiniciando Proxy-PhytonDirecto: $port ❗️ "
+curl -s --max-time 10 -d "chat_id=$IDB1&disable_web_page_preview=1&text=$MSG" $URL
+else
+for pid in $(echo $PIDVRF3); do
+echo""
+done
+fi
+done
+}
+
+ureset_python
+
+pidproxyc2=$(ps x | grep -w  "proxy.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy3 ]] && P2="<span class='encendido'> ACTIVO " || P3="<span class='detenido'> DESACTIVADO | REINICIANDO "
+echo "<p>Estado del servicio PythonDirect color está ||  $P2 </span>.</p> " >> $DIR/$ARCHIVO
 
 #SERVICE PYTHON DIREC
 ureset_python () {

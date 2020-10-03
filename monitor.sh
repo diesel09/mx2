@@ -113,7 +113,7 @@ done
 ureset_python
 
 pidproxy3=$(ps x | grep -w  "proxy.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy3 ]] && P3="<span class='encendido'> ACTIVO " || P3="<span class='detenido'> DESACTIVADO | REINICIANDO "
-echo "<p>Estado del servicio PythonDirect color está ||  $P3 </span>.</p> " >> $DIR/$ARCHIVO
+echo "<p>Estado del servicio Python Color está ||  $P3 </span>.</p> " >> $DIR/$ARCHIVO
 
 #SERVICE PYTHON DIREC
 ureset_python () {
